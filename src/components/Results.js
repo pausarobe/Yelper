@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
-import Api from '../services/Api'
-import bootstrap from 'react-bootstrap'
-
 import './Results.css'
-
 
 class Results extends Component {
 
