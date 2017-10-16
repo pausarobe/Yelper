@@ -1,43 +1,53 @@
-import React, { Component } from 'react';
-import { FormGroup, FormControl }  from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import { FormGroup, FormControl, InputGroup, Button } from 'react-bootstrap'
 
 class SearchForm extends Component {
-	constructor(){
-		super()
-		this.state={
-			value: '',
-			fireRedirect: false
-		}
-		this.handleChange = this.handleChange.bind(this)
-   		this.handleSubmit = this.handleSubmit.bind(this)
-	}
-	handleChange(e) {
-		this.setState({ value: e.target.value })
-	}
+  constructor () {
+    super()
+    this.state = {
+      value: '',
+      fireRedirect: false
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
 
-	handleSubmit(e){
-		e.preventDefault()
-		this.setState({ fireRedirect: true })	
-	}
-	render(){
-		return (
-		<div>
-			<form onSubmit={ this.handleSubmit }>
-		    	<FormGroup>
-		        	<FormControl 
-		              type="text" 
-		              onChange={this.handleChange}
-		              autoFocus
-		              placeholder="pizzeria, bar pepe, club de tenis..."
-		            />
-		        {
-		        	this.state.fireRedirect && this.state.value &&
-		          	<Redirect to={`/search/${this.state.value}`} push/>
-		        }
-		        </FormGroup>
-		    </form>
-		</div>
-		)}
+  handleChange (e) {
+    this.setState({ value: e.target.value })
+  }
+
+  handleSubmit (e) {
+    e.preventDefault()
+    this.setState({ fireRedirect: true })
+    console.log(this.state.value)
+  }
+
+  render () {
+    const { fireRedirect, value: query } = this.state
+    return (
+      <form  className="SearchForm" onSubmit={ this.handleSubmit }>
+        <FormGroup>
+          <InputGroup bsSize='lg'>
+            <FormControl
+              type="text"
+              onChange={this.handleChange}
+              value={this.state.value}
+              autoFocus
+              placeholder="sushi, gym, restaurant, starbucks,..."
+            />
+            <InputGroup.Button>
+              <Button>Find It!</Button>
+            </InputGroup.Button>
+          </InputGroup>
+        </FormGroup>
+        {
+          fireRedirect && query &&
+          <Redirect to={`/search/${query}`} push />
+        }
+      </form>
+    )
+  }
 }
-export default SearchForm;
+
+export default SearchForm
