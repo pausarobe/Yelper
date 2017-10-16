@@ -28,3 +28,4 @@ export function getYelpData(){
         console.log(err)
     })
 }
+
