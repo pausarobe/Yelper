@@ -13,14 +13,6 @@ class SearchForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentWillReceiveProps () {
-    console.log('componentWillReceiveProps...')
-    this.setState({
-      value: '',
-      fireRedirect: false
-    })
-  }
-
   handleChange (e) {
     this.setState({ value: e.target.value })
   }
@@ -31,7 +23,7 @@ class SearchForm extends Component {
     console.log(this.state.value)
   }
 
-  render() {
+  render () {
     const { fireRedirect, value: query } = this.state
     return (
       <form  className="SearchForm" onSubmit={ this.handleSubmit }>
