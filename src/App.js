@@ -8,9 +8,9 @@ class App extends Component {
     const callApi = getToken()
     return (
       <BrowserRouter>
-       <Main />
-    	</BrowserRouter>
-    )  
+        <Main />
+      </BrowserRouter>
+    )
   }
 }
 
