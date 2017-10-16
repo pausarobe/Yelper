@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {getToken} from './services/Api.js'
+import {getTestData } from './services/Api.js'
 import Main from './components/Main'
 import { BrowserRouter } from 'react-router-dom'
 
 
 class App extends Component {
   render() {
-  	const callApi= getToken()
+  	const callApi= getTestData()
     return ( 
     	<BrowserRouter>
     		<Main />
