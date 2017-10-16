@@ -16,7 +16,7 @@ export function getTestData(){
 }
 export function getYelpData(){
 	const url= 'https://yelp-api-proxy.herokuapp.com/businesses/search?term=Sushi&location=Barcelona'
- axios.get(url,{
+    axios.get(url,{
         headers: {
            Authorization: `${token}`
         }
