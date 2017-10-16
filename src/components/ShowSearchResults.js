@@ -14,7 +14,7 @@ class  ShowSearchResults extends Component {
 		        rating: ''        
       		}]
     	}
-    	//this.getApiData=this.getApiData.bind(this)
+    
 	}
 	getApiData(){
     getYelpData(this.props.match.params.query).then(
