@@ -14,29 +14,29 @@ class  ShowSearchResults extends Component {
 		        rating: ''        
       		}]
     	}
-    
 	}
 	getApiData(){
-    getYelpData(this.props.match.params.query).then(
-      dataSearchYelp => {
-        this.setState({
-          result:[...dataSearchYelp]
-            .map(function(yelpData){
-              return (   {
-                  id: yelpData.id,
-                  name: yelpData.name,
-                  image_url: yelpData.image_url,
-                  is_closed: yelpData.is_closed,
-                  rating: yelpData.rating
-              })
-          })
-        })
+	    getYelpData(this.props.match.params.query).then(
+	      dataSearchYelp => {
+	      	console.log(this.props.match.params.query)
+	        this.setState({
+	          result:[...dataSearchYelp]
+	            .map(function(yelpData){
+	              return (   {
+	                  id: yelpData.id,
+	                  name: yelpData.name,
+	                  image_url: yelpData.image_url,
+	                  is_closed: yelpData.is_closed,
+	                  rating: yelpData.rating
+	              })
+	          })
+	        })
       })
   	}
 
   	componentDidMount(){
-    this.getApiData(this.props.match.params.query)   
-  }
+    	this.getApiData()
+  	}
 	render(){
 		console.log(this.state)
 		return (
