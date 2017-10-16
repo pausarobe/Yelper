@@ -1,0 +1,19 @@
+.body {
+    border: 1px solid #aaa;
+    _width: 100%;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    }
+
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+.stars {
+    margin:20px auto 1px;    
+}
