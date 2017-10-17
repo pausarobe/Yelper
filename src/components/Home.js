@@ -1,6 +1,8 @@
 import React from 'react'
-import SearchForm from './SearchForm'
 import {Grid, Row, Col} from 'react-bootstrap'
+
+import SearchForm from './SearchForm'
+import Footer from './Footer'
 
 import './Home.css'
 
@@ -15,8 +17,9 @@ const Home = () => (
             <SearchForm />
           </div>
         </Col>
-      </Row>
+      </Row>     
     </Grid>
+    <Footer />
   </div>
 )
 

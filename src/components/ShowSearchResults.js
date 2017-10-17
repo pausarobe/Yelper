@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
+import Header from './Navbar'
 
 class  ShowSearchResults extends Component {
 	constructor(){
@@ -45,6 +46,7 @@ class  ShowSearchResults extends Component {
 		console.log(this.state)
 		return (
 			<div>
+			 <Header/>
 				<h1>Estoy en la ShowSearchResults</h1> 
 				<Results inputresults={this.state}/>
 			</div>
