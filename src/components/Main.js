@@ -11,7 +11,7 @@ const Main = (props) => {
   		<Switch>
         <Route exact path='/' component={Home} />
         <Route path='/search/:query' component={Filters} />
-        <Route path='/specific/:query' component={ShowSpecificResults} />
+        <Route path='/specific/:id' component={ShowSpecificResults} />
       </Switch>
     </div>
   )
