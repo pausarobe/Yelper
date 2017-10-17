@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import './Results.css'
 import { Link } from 'react-router-dom'
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
+
 
 
 class Results extends Component {
@@ -22,7 +25,7 @@ class Results extends Component {
                     <div className="col-md-6">
                       <h2  className="list-group-item-heading center"> {res.name} </h2>
                       <ul>
-                        <li className="glyphicon glyphicon-map-marker">&nbsp; {res.address} - ({res.city})</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> {res.address} - ({res.city})</li>
                         <br/>
                         <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
                         <br/>
@@ -31,6 +34,7 @@ class Results extends Component {
                     </div>
                     <div className="col-md-3 text-center">
                       <Link to='/specific/:id'><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
+                      <Rater interactive={false} rating={res.rating} />
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
                   </a>
