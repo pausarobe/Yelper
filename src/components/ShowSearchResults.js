@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
-import Navbar from './Navbar'
-import Filters from './Filters'
+import Header from './Navbar'
 
 class  ShowSearchResults extends Component {
 	constructor(){
@@ -13,7 +12,11 @@ class  ShowSearchResults extends Component {
 		        name: '',
 		        image_url: '',
 		        is_closed: '',
-		        rating: ''        
+		        rating: '',
+		        city: '',
+		        url: '', 
+		        address: '',
+		        phone: '' 
       		}]
     	}
 	}
@@ -29,13 +32,21 @@ class  ShowSearchResults extends Component {
 	                  name: yelpData.name,
 	                  image_url: yelpData.image_url,
 	                  is_closed: yelpData.is_closed,
-	                  rating: yelpData.rating
+	                  rating: yelpData.rating,
+	                  city: yelpData.location.city,
+	                  url: yelpData.url,
+	                  address: yelpData.location.address1,
+	                  phone: yelpData.display_phone
 	              })
 	          })
 	        })
       })
   	}
-
+	componentWillReceiveProps( nextProps ) {
+   		this.props=nextProps
+   		this.getApiData()
+    
+  	}
   	componentDidMount(){
     	this.getApiData()
   	}
@@ -43,11 +54,8 @@ class  ShowSearchResults extends Component {
 		console.log(this.state)
 		return (
 			<div>
-			 <Navbar/>
-				<h1>Estoy en la ShowSearchResults</h1>
-					<Filters filters={this.state.res}/>
-
-				<Results/>
+			 <Header/>
+				<Results inputresults={this.state}/>
 			</div>
 		)
 	}
