@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Results.css'
-import ShowSpecificResults from './ShowSpecificResults'
-
+import { Rate } from 'antd';
+import 'antd/dist/antd.min.css'
 class Results extends Component {
 
 	render() {
@@ -16,31 +16,28 @@ class Results extends Component {
 
         {
             this.props.inputresults.map((res)=> {
-                return (<a href={res.url} className="list-group-item">
+                return (<a className="list-group-item">
                                 <div className="media col-md-3">
                                     <figure className="pull-left">
                                         <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} alt="placehold.it/350x250" />
                                     </figure>
                                 </div>
                                 <div className="col-md-6">
-                                    <h2 className="list-group-item-heading center"> {res.name} </h2>
+                                    <h2  className="list-group-item-heading center"> {res.name} </h2>
                                     <ul>
-                                        <li className="glyphicon glyphicon-map-marker">&nbsp;  {res.address} - ({res.city})</li>
+                                        <li className="glyphicon glyphicon-map-marker">&nbsp; {res.address} - ({res.city})</li>
                                         <br/>
                                         <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
                                         <br/>
-                                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone}</li>
+                                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone.replace('+34', '')}</li>
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
-                                    <button type="button" className="btn btn-default btn-lg btn-block" onSubmit={ShowSpecificResults}>More Info</button>
-                                    <div className="stars">
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star-empty"></span>
-                                    </div>
+                                    <a href={ShowSpecificResults}><button type="button" className="btn btn-default btn-lg btn-block">More Info</button></a>
+
+                                        <Rate disabled allowHalf defaultValue={res.rating} key={res.id}/>
+
+
                                     <p> Average {res.rating} <small> / </small> 5 </p>
                                 </div>
                           </a>  )
