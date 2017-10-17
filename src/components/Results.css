@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 208fbddaece468efde9ee5631f731886583ddc07
 .body {
     border: 1px solid #aaa;
     _width: 100%;
@@ -26,10 +30,15 @@ a.list-group-item.active small {
     color: gold;
 }
 
+.glyphicon-force-font {
+    font-family: 'Glyphicons Halflings' !important;
+}
+
 a {
     font-size: 17px;
 }
 
 img {
-    max-height: 150px;
+    width:100%;
+    max-height: 200px;
 }

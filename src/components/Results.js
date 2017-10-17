@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+
 import { Link } from 'react-router-dom'
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 import './Results.css'
 
 class Results extends Component {
-
-	render() {
-    console.log("results", this.props.inputresults)
+    render() {
     return (
       <div className="container">
         <div className="row">
@@ -23,9 +24,9 @@ class Results extends Component {
                     <div className="col-md-6">
                       <h2  className="list-group-item-heading center"> {res.name} </h2>
                       <ul>
-                        <li className="glyphicon glyphicon-map-marker">&nbsp; {res.address} - ({res.city})</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> {res.address} - ({res.city})</li>
                         <br/>
-                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
+                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed === false ? 'Open' : 'Close'}</li>
                         <br/>
                         <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone.replace('+34', '')}</li>
                       </ul>
@@ -44,5 +45,5 @@ class Results extends Component {
     )
   }
 }
-
 export default Results
+

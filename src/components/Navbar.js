@@ -1,7 +1,6 @@
 import React from 'react'
-import { Navbar,FormGroup,Button,FormControl } from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
 import SearchForm from './SearchForm'
-import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
 const Header = () => (
