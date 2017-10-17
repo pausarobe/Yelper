@@ -1,5 +1,28 @@
 import React from 'react'
+import { Navbar,FormGroup,Button,FormControl } from 'react-bootstrap'
+import SearchForm from './SearchForm'
 
-const Navbar = () => (<h1>Estoy en Navbar</h1>)
+const Header = () => (
+	<div>
+	 <Navbar inverse collapseOnSelect>
+	 	<Navbar.Header>
+	    	<Navbar.Brand>
+	        	<a href="#">Yelper</a>
+	      	</Navbar.Brand>
+	    	<Navbar.Toggle />
+	    </Navbar.Header>
+	    <Navbar.Collapse>
+	    	<Navbar.Form pullRight>
+	        	<FormGroup>
+	          		<FormControl type="text" placeholder="Search" />
+	        	</FormGroup>
+	        	{' '}
+	        	<Button type="submit">Submit</Button>
+	      	</Navbar.Form>
+	    </Navbar.Collapse>
+	 </Navbar>
+	</div>
+  
+	)
 
-export default Navbar
+export default Header
