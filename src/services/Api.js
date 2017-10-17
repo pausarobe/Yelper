@@ -12,7 +12,7 @@ export function getYelpData (query){
 }
 
 export function getYelpDataById (id){
-  const url= `https://yelp-api-proxy.herokuapp.com/businesses/?term=${id}/reviews`
+  const url= `https://yelp-api-proxy.herokuapp.com/businesses/${id}/reviews`
     return axios.get(url,{
         headers: {
            Authorization: `${token}`
