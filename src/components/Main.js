@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
-import ShowSearchResults from './ShowSearchResults'
+import Filters from './Filters'
 
 
 const Main = (props) => {
@@ -9,7 +9,7 @@ const Main = (props) => {
 	<div>
 		<Switch>
 	      <Route exact path='/' component={Home}/>
-	      <Route path='/search/:query' component={ShowSearchResults}/>
+	      <Route path='/search/:query' component={Filters}/>
 	    </Switch>
   	</div>
 	)}

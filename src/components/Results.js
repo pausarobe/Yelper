@@ -5,13 +5,17 @@ import { Rate } from 'antd';
 class Results extends Component {
 
 	render() {
-        console.log(this.props.inputresults)
-    	return (<div className="container">
-    <div className="row">
-    <div className="well">
-        <div className="list-group">
+
+        console.log("results",this.props.inputresults)
+    	return (
+            <div className="container">
+                <div className="row">
+                    <div className="well">
+                        <h1 className="text-center">Results Page</h1>
+                        <div className="list-group">
+
         {
-            this.props.inputresults.result.map((res)=> {
+            this.props.inputresults.map((res)=> {
                 return (<a href={res.url} className="list-group-item">
                                 <div className="media col-md-3">
                                     <figure className="pull-left">
@@ -39,11 +43,12 @@ class Results extends Component {
             })
               
         }
+                         </div>
+                    </div>
+                </div>
         </div>
-        </div>
-  </div>
-</div>)
-}
+        )
+    }
 }
 
 export default Results;
