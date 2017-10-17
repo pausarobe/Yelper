@@ -21,6 +21,7 @@ class Filters extends Component {
             }]
         }
     this.getFilter=this.getFilter.bind(this)
+    this.getFilterRating=this.getFilterRating.bind(this)
    
   }
     getFilter(){
@@ -44,6 +45,36 @@ class Filters extends Component {
               })
             })
 		//console.log("getFilter", this.state)
+	}
+
+	 getFilterRating(){
+		this.setState((prevState)=>{
+              result:prevState.result.sort((buss1, buss2)=>{
+              	 if(buss1.rating === buss2.rating) {
+					   
+					    return buss2.rating - buss1.rating;
+					  } else {
+					
+					    return buss2.rating - buss1.rating ;
+					  }
+               })
+
+              .map((yelpData)=> {
+                  return ({
+                      id: yelpData.id,
+                      name: yelpData.name,
+                      image_url: yelpData.image_url,
+                      is_closed: yelpData.is_closed,
+                      rating: yelpData.rating,
+                      city: yelpData.city,
+                      url: yelpData.url,
+                      address: yelpData.address,
+                      phone: yelpData.phone
+                  })
+              })
+
+
+             })
 	}
 
     getApiData(){
