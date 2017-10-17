@@ -3,96 +3,89 @@ import { Button } from 'react-bootstrap'
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Header from './Navbar'
-
-
-
-
 class Filters extends Component {
   constructor() {
     super()
     this.state={
-	      	result: [{
-		        id: '',
-		        name: '',
-		        image_url: '',
-		        is_closed: '',
-		        rating: '',
-		        city: '',
-		        url: '', 
-		        address: '',
-		        phone: '' 
-      		}]
-    	}
-    this.onHandle=this.onHandle.bind(this)
+            result: [{
+                id: '',
+                name: '',
+                image_url: '',
+                is_closed: '',
+                rating: '',
+                city: '',
+                url: '', 
+                address: '',
+                phone: '' 
+            }]
+        }
+    this.getFilter=this.getFilter.bind(this)
+   
   }
-
-ClickForOnlyOpen(){
-
-		//functionFilter = () => {
-
-		//		console.log(this.props)
-		//return is_closed: false
-	//}
-
-}
-// 	 this.setState({ 		
-// 	 		this.props.filters:[...dataSearchYelp].filter(functionFilter).map(function(yelpData){
-// 	              return (   {
-// 	                  id: yelpData.id,
-// 	                  name: yelpData.name,
-// 	                  image_url: yelpData.image_url,
-// 	                  is_closed: yelpData.is_closed,
-// 	                  rating: yelpData.rating
-// 	              })
-// 	          })
-// 	        })          
-// }
-	onHandle(){
-		console.log(this.props.results)
+    getFilter(){
+		this.setState({
+              result:this.state.result
+              	.filter(function(yelpData){
+              		return yelpData.is_closed === false 
+              	})
+                .map(function(yelpData){
+                  return (   {
+                      id: yelpData.id,
+                      name: yelpData.name,
+                      image_url: yelpData.image_url,
+                      is_closed: yelpData.is_closed,
+                      rating: yelpData.rating,
+                      city: yelpData.city,
+                      url: yelpData.url,
+                      address: yelpData.address,
+                      phone: yelpData.phone
+                  })
+              })
+            })
+		console.log("getFilter", this.state)
 	}
-	getApiData(){
-	    getYelpData(this.props.match.params.query).then(
-	      dataSearchYelp => {
-	        this.setState({
-	          result:[...dataSearchYelp]
-	            .map(function(yelpData){
-	              return (   {
-	                  id: yelpData.id,
-	                  name: yelpData.name,
-	                  image_url: yelpData.image_url,
-	                  is_closed: yelpData.is_closed,
-	                  rating: yelpData.rating,
-	                  city: yelpData.location.city,
-	                  url: yelpData.url,
-	                  address: yelpData.location.address1,
-	                  phone: yelpData.display_phone
-	              })
-	          })
-	        })
+
+    getApiData(){
+        getYelpData(this.props.match.params.query).then(
+          dataSearchYelp => {
+            this.setState({
+              result:[...dataSearchYelp]
+              	.map(function(yelpData){
+                  return (   {
+                      id: yelpData.id,
+                      name: yelpData.name,
+                      image_url: yelpData.image_url,
+                      is_closed: yelpData.is_closed,
+                      rating: yelpData.rating,
+                      city: yelpData.location.city,
+                      url: yelpData.url,
+                      address: yelpData.location.address1,
+                      phone: yelpData.display_phone
+                  })
+              })
+            })
       })
-  	}
-	componentWillReceiveProps( nextProps ) {
-   		this.props=nextProps
-   		this.getApiData()
+    }
+    componentWillReceiveProps( nextProps ) {
+        this.props=nextProps
+        this.getApiData()
     
-  	}
-  	componentDidMount(){
-    	this.getApiData()
-  	}
-
-	render() {
-		console.log("filters", this.state)
-		return ( 
-			<div>
-			 <Header/>
-				<div className="container"> 
-					<button type="button"  onClick={this.onHandle} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
-				</div>
-				<Results inputresults={this.state.result}/>
-			</div>
-		)
-
-	}
+    }
+    componentDidMount(){
+        this.getApiData()
+    }
+    render() {
+        console.log("filters", this.state)
+        return ( 
+            <div>
+             <Header/>
+                <div className="container"> 
+                    <button type="button"  onClick={this.getFilter} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
+                    
+                </div>
+                <Results inputresults={this.state.result}/>
+            </div>
+        )
+    }
 }
-
 export default Filters;

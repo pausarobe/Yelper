@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import './Results.css'
 import { Link } from 'react-router-dom'
-
-
 class Results extends Component {
-	render() {
-    console.log("results", this.props)
+
+    render() {
+    console.log("results", this.props.inputresults)
+
     return (
       <div className="container">
         <div className="row">
@@ -43,6 +43,5 @@ class Results extends Component {
     )
   }
 }
-
 export default Results;
 
