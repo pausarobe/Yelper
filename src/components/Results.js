@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Results.css'
+import { Rate } from 'antd';
 
 class Results extends Component {
 
@@ -20,22 +21,18 @@ class Results extends Component {
                                 <div className="col-md-6">
                                     <h2 className="list-group-item-heading center"> {res.name} </h2>
                                     <ul>
-                                        <li className="glyphicon glyphicon-map-marker">&nbsp;  {res.address} - ({res.city})</li>
+                                        <li className="glyphicon glyphicon-map-marker">&nbsp; {res.address} - ({res.city})</li>
                                         <br/>
                                         <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
                                         <br/>
-                                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone}</li>
+                                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone.replace('+34', '')}</li>
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
                                     <button type="button" className="btn btn-default btn-lg btn-block">More Info</button>
-                                    <div className="stars">
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star"></span>
-                                        <span className="glyphicon glyphicon-star-empty"></span>
-                                    </div>
+
+                                        <Rate allowHalf defaultValue={2.5} key={res.id}/>
+
                                     <p> Average {res.rating} <small> / </small> 5 </p>
                                 </div>
                           </a>  )
