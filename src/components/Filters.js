@@ -58,7 +58,6 @@ class Filters extends Component {
 					    return buss2.rating - buss1.rating ;
 					  }
                })
-
               .map((yelpData)=> {
                   return ({
                       id: yelpData.id,
@@ -72,7 +71,6 @@ class Filters extends Component {
                       phone: yelpData.phone
                   })
               })
-
 
              })
 	}
