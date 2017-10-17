@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Navbar from './Navbar'
-import Filters from './Filters.js'
+import Filters from './Filters'
 
 class  ShowSearchResults extends Component {
 	constructor(){
@@ -45,7 +45,7 @@ class  ShowSearchResults extends Component {
 			<div>
 			 <Navbar/>
 				<h1>Estoy en la ShowSearchResults</h1>
-					<Filters filters={this.state.result}/>
+					<Filters filters={this.state.res}/>
 
 				<Results/>
 			</div>

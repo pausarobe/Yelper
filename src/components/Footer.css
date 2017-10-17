@@ -1,0 +1,17 @@
+.nav-selector {
+  margin-top: 350px;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: none;
+  border: none;
+}
+
+.nav-selector .navbar-brand {
+  cursor: pointer;
+  color: white;
+}
+
+.nav-selector .navbar-nav li a{
+  color: white;
+
+}
