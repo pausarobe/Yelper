@@ -31,12 +31,13 @@ class Results extends Component {
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-phone-alt">&nbsp;</span> {res.phone.replace('+34', '')}</li>
                       </ul>
                     </div>
-                    <div className="col-md-3 text-center">
+                    <div className="col-md-3 text-center nolink">
                       <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
-                      <Rater interactive={false} rating={res.rating} />
+                      <Rater id="stars" interactive={false} rating={res.rating}/>
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
                   </a>
+
                 )
               })}
             </div>
