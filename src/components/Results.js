@@ -8,7 +8,6 @@ class Results extends Component {
     	return (<div className="container">
     <div className="row">
     <div className="well">
-        <h1 className="text-center">Results Page</h1>
         <div className="list-group">
         {
             this.props.inputresults.result.map((res)=> {
@@ -19,11 +18,13 @@ class Results extends Component {
                                     </figure>
                                 </div>
                                 <div className="col-md-6">
-                                    <h4 className="list-group-item-heading"> {res.name} </h4>
+                                    <h2 className="list-group-item-heading center"> {res.name} </h2>
                                     <ul>
-                                        <li className="glyphicon glyphicon-map-marker">  {res.address} - ({res.city})</li>
-                                        <li>{res.is_closed}</li>
-                                        <li className="glyphicon glyphicon-phone">  {res.phone}</li>
+                                        <li className="glyphicon glyphicon-map-marker">&nbsp;  {res.address} - ({res.city})</li>
+                                        <br/>
+                                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
+                                        <br/>
+                                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone}</li>
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
