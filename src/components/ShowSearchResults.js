@@ -42,7 +42,11 @@ class  ShowSearchResults extends Component {
 	        })
       })
   	}
-
+	componentWillReceiveProps( nextProps ) {
+   		this.props=nextProps
+   		this.getApiData()
+    
+  	}
   	componentDidMount(){
     	this.getApiData()
   	}

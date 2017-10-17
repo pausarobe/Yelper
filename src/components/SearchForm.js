@@ -22,6 +22,12 @@ class SearchForm extends Component {
     this.setState({ fireRedirect: true })
     console.log(this.state.value)
   }
+  componentWillReceiveProps() {
+    this.setState({ 
+      value: '',
+      fireRedirect: false
+    })
+  }
 
   render () {
     const { fireRedirect, value: query } = this.state

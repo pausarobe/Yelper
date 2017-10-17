@@ -1,11 +1,14 @@
 .nav-selector {
   margin-top: 350px;
   margin-bottom: 0;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: none;
+  border: none;
 }
 
-.nav-title {
+.nav-selector .navbar-brand {
   cursor: pointer;
+<<<<<<< HEAD
 }
 
 .glyphicon-star {
@@ -14,4 +17,11 @@
 
 .glyphicon-star-empty {
 	color: gold;
+=======
+  color: white;
+}
+
+.nav-selector .navbar-nav li a{
+  color: white;
+>>>>>>> 29efb9a2152f4e99bb6d81f98780a609f2cc5c9b
 }
