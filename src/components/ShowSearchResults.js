@@ -55,7 +55,6 @@ class  ShowSearchResults extends Component {
 		return (
 			<div>
 			 <Header/>
-				<h1>Estoy en la ShowSearchResults</h1> 
 				<Results inputresults={this.state}/>
 			</div>
 		)
