@@ -1,10 +1,20 @@
 import React, {Component} from 'react'
+import { getYelpDataById } from '../services/Api.js'
 
 class ShowSpecificResults extends Component {
+  componentDidMount=()=>{
+    var idToSearch = this.props.match.params['id']
+    getYelpDataById(idToSearch).then((data)=>{
+      console.log(data)
+    })
+  }
   render () {
-    console.log("results",this.props.inputresults)
     return (
-      <h1>ShowSpecificResults Page</h1>
+      <div className="container">
+        <div className="row">
+          <h1>ShowSpecificResults</h1>
+        </div>
+      </div>
     )
   }
 }
