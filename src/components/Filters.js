@@ -43,7 +43,7 @@ class Filters extends Component {
                   })
               })
             })
-		console.log("getFilter", this.state)
+		//console.log("getFilter", this.state)
 	}
 
     getApiData(){
@@ -76,7 +76,7 @@ class Filters extends Component {
         this.getApiData()
     }
     render() {
-        console.log("filters", this.state)
+        //console.log("filters", this.state)
         return ( 
             <div>
              <Header/>
