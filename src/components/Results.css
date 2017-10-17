@@ -14,17 +14,6 @@ a.list-group-item {
 a.list-group-item.active small {
     color:#fff;
 }
-.stars {
-    margin:20px auto 1px;    
-}
-
-.glyphicon-star {
-    color: gold;
-}
-
-.glyphicon-star-empty {
-    color: gold;
-}
 
 .glyphicon-force-font {
     font-family: 'Glyphicons Halflings' !important;
