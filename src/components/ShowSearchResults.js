@@ -11,7 +11,9 @@ class  ShowSearchResults extends Component {
 		        name: '',
 		        image_url: '',
 		        is_closed: '',
-		        rating: ''        
+		        rating: '',
+		        city: '',
+		        url: ''   
       		}]
     	}
 	}
@@ -27,7 +29,9 @@ class  ShowSearchResults extends Component {
 	                  name: yelpData.name,
 	                  image_url: yelpData.image_url,
 	                  is_closed: yelpData.is_closed,
-	                  rating: yelpData.rating
+	                  rating: yelpData.rating,
+	                  city: yelpData.location.city,
+	                  url: yelpData.url
 	              })
 	          })
 	        })
@@ -42,7 +46,7 @@ class  ShowSearchResults extends Component {
 		return (
 			<div>
 				<h1>Estoy en la ShowSearchResults</h1> 
-				<Results/>
+				<Results inputresults={this.state}/>
 			</div>
 		)
 	}
