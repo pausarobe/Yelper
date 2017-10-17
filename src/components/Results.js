@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 class Results extends Component {
 	render() {
-    console.log("results", this.props.inputresults)
+    console.log("results", this.props)
     return (
       <div className="container">
         <div className="row">
