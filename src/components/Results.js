@@ -8,21 +8,23 @@ class Results extends Component {
     	return (<div className="container">
     <div className="row">
     <div className="well">
-        <h1 className="text-center">Results Page</h1>
         <div className="list-group">
         {
             this.props.inputresults.result.map((res)=> {
                 return (<a href={res.url} className="list-group-item">
                                 <div className="media col-md-3">
                                     <figure className="pull-left">
-                                        <img className="media-object img-rounded img-responsive" src={res.image_url} alt="placehold.it/350x250" />
+                                        <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} alt="placehold.it/350x250" />
                                     </figure>
                                 </div>
                                 <div className="col-md-6">
-                                    <h4 className="list-group-item-heading"> {res.name} </h4>
+                                    <h2 className="list-group-item-heading center"> {res.name} </h2>
                                     <ul>
-                                        <li>{res.city}</li>
-                                        <li>{res.is_closed}</li>
+                                        <li className="glyphicon glyphicon-map-marker">&nbsp;  {res.address} - ({res.city})</li>
+                                        <br/>
+                                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
+                                        <br/>
+                                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone}</li>
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
