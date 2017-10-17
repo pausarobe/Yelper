@@ -20,12 +20,13 @@ class Filters extends Component {
             }]
         }
     this.getFilter=this.getFilter.bind(this)
+   
   }
     getFilter(){
 		this.setState({
               result:this.state.result
               	.filter(function(yelpData){
-              		return yelpData.is_closed === true 
+              		return yelpData.is_closed === false 
               	})
                 .map(function(yelpData){
                   return (   {
@@ -43,6 +44,7 @@ class Filters extends Component {
             })
 		console.log("getFilter", this.state)
 	}
+
     getApiData(){
         getYelpData(this.props.match.params.query).then(
           dataSearchYelp => {
@@ -79,6 +81,7 @@ class Filters extends Component {
              <Header/>
                 <div className="container"> 
                     <button type="button"  onClick={this.getFilter} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
+                    
                 </div>
                 <Results inputresults={this.state.result}/>
             </div>
