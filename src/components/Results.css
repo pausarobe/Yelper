@@ -29,3 +29,11 @@ a.list-group-item.active small {
 .glyphicon-star-empty {
     color: gold;
 }
+
+a {
+    font-size: 17px;
+}
+
+img {
+    max-height: 200px;
+}
