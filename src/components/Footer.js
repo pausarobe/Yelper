@@ -7,7 +7,7 @@ const Footer = () => {
   return(
     <Navbar inverse collapseOnSelect className="nav-selector">
       <Navbar.Header>
-        <Navbar.Brand eventKey={1} className="nav-title">YELPER barcelona</Navbar.Brand>
+        <Navbar.Brand eventKey={1}>YELPERbarcelona</Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
