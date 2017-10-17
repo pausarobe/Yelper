@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Navbar from './Navbar'
+import Filters from './Filters.js'
 
 class  ShowSearchResults extends Component {
 	constructor(){
@@ -43,7 +44,9 @@ class  ShowSearchResults extends Component {
 		return (
 			<div>
 			 <Navbar/>
-				<h1>Estoy en la ShowSearchResults</h1> 
+				<h1>Estoy en la ShowSearchResults</h1>
+					<Filters filters={this.state.result}/>
+
 				<Results/>
 			</div>
 		)
