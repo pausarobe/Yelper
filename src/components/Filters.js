@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap'
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Header from './Navbar'
+import Footer from './Footer'
+
 class Filters extends Component {
   constructor() {
     super()
@@ -43,7 +44,7 @@ class Filters extends Component {
                   })
               })
             })
-		console.log("getFilter", this.state)
+		//console.log("getFilter", this.state)
 	}
 
 	 getFilterRating(){
@@ -106,15 +107,15 @@ class Filters extends Component {
         this.getApiData()
     }
     render() {
-        console.log("filters", this.state)
+        //console.log("filters", this.state)
         return ( 
             <div>
              <Header/>
                 <div className="container"> 
                     <button type="button"  onClick={this.getFilter} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
-                    <button type ="button" onClick={this.getFilterRating} className="btn btn-outline-warning"> Ordenar por mejor Raiting </button>
                 </div>
                 <Results inputresults={this.state.result}/>
+                <Footer/>
             </div>
         )
     }

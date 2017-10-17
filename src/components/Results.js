@@ -1,9 +1,13 @@
 import React, {Component} from 'react'
-import './Results.css'
+
 import { Link } from 'react-router-dom'
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
+
+import './Results.css'
+
 class Results extends Component {
     render() {
-    console.log("results", this.props.inputresults)
     return (
       <div className="container">
         <div className="row">
@@ -20,15 +24,16 @@ class Results extends Component {
                     <div className="col-md-6">
                       <h2  className="list-group-item-heading center"> {res.name} </h2>
                       <ul>
-                        <li className="glyphicon glyphicon-map-marker">&nbsp; {res.address} - ({res.city})</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> {res.address} - ({res.city})</li>
                         <br/>
-                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-time">&nbsp;</span> {res.is_closed === false ? 'Open' : 'Close'}</li>
                         <br/>
-                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone.replace('+34', '')}</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-phone-alt">&nbsp;</span> {res.phone.replace('+34', '')}</li>
                       </ul>
                     </div>
                     <div className="col-md-3 text-center">
-                      <Link to='/specific/:id'><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
+                      <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
+                      <Rater interactive={false} rating={res.rating} />
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
                   </a>
@@ -41,5 +46,5 @@ class Results extends Component {
     )
   }
 }
-export default Results;
+export default Results
 

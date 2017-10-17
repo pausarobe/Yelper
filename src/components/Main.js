@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Filters from './Filters'
 import Home from './Home'
+import Filters from './Filters'
 import ShowSpecificResults from './ShowSpecificResults'
 
 const Main = (props) => {
