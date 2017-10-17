@@ -41,14 +41,15 @@ class Filters extends Component {
 // }
 	getFilter(){
 		
-
 		console.log(this.state.result.filter(function(yelpData){
-			 return "hola" && true ||  "hola"
-		}))
+						
+						return console.log('holaa')
+			 }
+		))
 	}
+
 	onHandle(){
 		//console.log(this.state.result[0].is_closed)
-
 		this.setState({
 			result:this.state.result.map(function(yelpData){
 				 return (   {
@@ -63,8 +64,6 @@ class Filters extends Component {
 	                  phone: yelpData.display_phone
 	              })
 			})
-
-
 	        //   result:[dataSearchYelp]
 	        //     .map(function(yelpData){
 	        //       return (   {
