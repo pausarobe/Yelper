@@ -26,13 +26,14 @@ class Results extends Component {
                       <ul>
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> {res.address} - ({res.city})</li>
                         <br/>
-                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed === false ? 'Open' : 'Close'}</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-time">&nbsp;</span> {res.is_closed === false ? 'Open' : 'Close'}</li>
                         <br/>
-                        <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone.replace('+34', '')}</li>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-phone-alt">&nbsp;</span> {res.phone.replace('+34', '')}</li>
                       </ul>
                     </div>
                     <div className="col-md-3 text-center">
                       <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
+                      <Rater interactive={false} rating={res.rating} />
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
                   </a>
