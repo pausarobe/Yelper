@@ -21,3 +21,11 @@ a.list-group-item.active small {
 .stars {
     margin:20px auto 1px;    
 }
+
+.glyphicon-star {
+    color: gold;
+}
+
+.glyphicon-star-empty {
+    color: gold;
+}

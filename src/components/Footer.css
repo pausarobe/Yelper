@@ -8,20 +8,10 @@
 
 .nav-selector .navbar-brand {
   cursor: pointer;
-<<<<<<< HEAD
-}
-
-.glyphicon-star {
-	color: gold;
-}
-
-.glyphicon-star-empty {
-	color: gold;
-=======
   color: white;
 }
 
 .nav-selector .navbar-nav li a{
   color: white;
->>>>>>> 29efb9a2152f4e99bb6d81f98780a609f2cc5c9b
+
 }
