@@ -17,7 +17,7 @@ const Footer = () => {
             <NavItem eventKey={4}>Thanks to</NavItem>
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={5}>Skylab - © 2017</NavItem>
+          <NavItem eventKey={5}>SkylabStudents - © 2017</NavItem>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

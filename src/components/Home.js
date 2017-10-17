@@ -17,8 +17,8 @@ const Home = () => (
             <SearchForm />
           </div>
         </Col>
-      </Row>     
-    </Grid>
+      </Row>
+      </Grid>
     <Footer />
   </div>
 )
