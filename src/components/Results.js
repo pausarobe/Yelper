@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import './Results.css'
+import ShowSpecificResults from './ShowSpecificResults'
 
 class Results extends Component {
 
 	render() {
-        console.log(this.props.inputresults)
-    	return (<div className="container">
-    <div className="row">
-    <div className="well">
-        <div className="list-group">
+
+        console.log("results",this.props.inputresults)
+    	return (
+            <div className="container">
+                <div className="row">
+                    <div className="well">
+                        
+                        <div className="list-group">
+
         {
-            this.props.inputresults.result.map((res)=> {
+            this.props.inputresults.map((res)=> {
                 return (<a href={res.url} className="list-group-item">
                                 <div className="media col-md-3">
                                     <figure className="pull-left">
@@ -28,7 +33,7 @@ class Results extends Component {
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
-                                    <button type="button" className="btn btn-default btn-lg btn-block">More Info</button>
+                                    <button type="button" className="btn btn-default btn-lg btn-block" onSubmit={ShowSpecificResults}>More Info</button>
                                     <div className="stars">
                                         <span className="glyphicon glyphicon-star"></span>
                                         <span className="glyphicon glyphicon-star"></span>
@@ -42,11 +47,12 @@ class Results extends Component {
             })
               
         }
+                         </div>
+                    </div>
+                </div>
         </div>
-        </div>
-  </div>
-</div>)
-}
+        )
+    }
 }
 
 export default Results;
