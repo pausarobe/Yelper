@@ -111,6 +111,7 @@ class Filters extends Component {
              <Header/>
                 <div className="container"> 
                     <button type="button"  onClick={this.getFilter} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
+                    <button type="button"  onClick={this.getFilterRating} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
                 </div>
                 <Results inputresults={this.state.result}/>
                 <Footer/>
