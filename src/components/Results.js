@@ -5,7 +5,8 @@ class Results extends Component {
 
 	render() {
 
-        console.log("results",this.props.inputresults)
+        
+       // console.log("results",this.props.inputresults)
     	return (
             <div className="container">
                 <div className="row">

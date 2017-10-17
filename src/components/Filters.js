@@ -26,16 +26,8 @@ class Filters extends Component {
     this.onHandle=this.onHandle.bind(this)
   }
 
-ClickForOnlyOpen(){
 
-		//functionFilter = () => {
-
-		//		console.log(this.props)
-		//return is_closed: false
-	//}
-
-}
-// 	 this.setState({ 		
+// this.setState({ 		
 // 	 		this.props.filters:[...dataSearchYelp].filter(functionFilter).map(function(yelpData){
 // 	              return (   {
 // 	                  id: yelpData.id,
@@ -47,8 +39,49 @@ ClickForOnlyOpen(){
 // 	          })
 // 	        })          
 // }
+	getFilter(){
+		
+
+		console.log(this.state.result.filter(function(yelpData){
+			 return "hola" && true ||  "hola"
+		}))
+	}
 	onHandle(){
-		console.log(this.props.results)
+		//console.log(this.state.result[0].is_closed)
+
+		this.setState({
+			result:this.state.result.map(function(yelpData){
+				 return (   {
+	                  id: yelpData.id,
+	                  name: yelpData.name,
+	                  image_url: yelpData.image_url,
+	                  is_closed: yelpData.is_closed,
+	                  rating: yelpData.rating,
+	                  city: yelpData.city,
+	                  url: yelpData.url,
+	                  address: yelpData.address1,
+	                  phone: yelpData.display_phone
+	              })
+			})
+
+
+	        //   result:[dataSearchYelp]
+	        //     .map(function(yelpData){
+	        //       return (   {
+	        //           id: yelpData.id,
+	        //           name: yelpData.name,
+	        //           image_url: yelpData.image_url,
+	        //           is_closed: yelpData.is_closed,
+	        //           rating: yelpData.rating,
+	        //           city: yelpData.location.city,
+	        //           url: yelpData.url,
+	        //           address: yelpData.location.address1,
+	        //           phone: yelpData.display_phone
+	        //       })
+	        //   })
+	         })
+		 this.getFilter()
+		//console.log('iterado',this.state.results)
 	}
 	getApiData(){
 	    getYelpData(this.props.match.params.query).then(
@@ -81,7 +114,7 @@ ClickForOnlyOpen(){
   	}
 
 	render() {
-		console.log("filters", this.state)
+	
 		return ( 
 			<div>
 			 <Header/>
