@@ -14,7 +14,9 @@ class  ShowSearchResults extends Component {
 		        is_closed: '',
 		        rating: '',
 		        city: '',
-		        url: ''   
+		        url: '', 
+		        address: '',
+		        phone: '' 
       		}]
     	}
 	}
@@ -32,7 +34,9 @@ class  ShowSearchResults extends Component {
 	                  is_closed: yelpData.is_closed,
 	                  rating: yelpData.rating,
 	                  city: yelpData.location.city,
-	                  url: yelpData.url
+	                  url: yelpData.url,
+	                  address: yelpData.location.address1,
+	                  phone: yelpData.display_phone
 	              })
 	          })
 	        })

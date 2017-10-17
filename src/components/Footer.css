@@ -7,3 +7,11 @@
 .nav-title {
   cursor: pointer;
 }
+
+.glyphicon-star {
+	color: gold;
+}
+
+.glyphicon-star-empty {
+	color: gold;
+}

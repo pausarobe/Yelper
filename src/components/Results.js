@@ -15,14 +15,15 @@ class Results extends Component {
                 return (<a href={res.url} className="list-group-item">
                                 <div className="media col-md-3">
                                     <figure className="pull-left">
-                                        <img className="media-object img-rounded img-responsive" src={res.image_url} alt="placehold.it/350x250" />
+                                        <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} alt="placehold.it/350x250" />
                                     </figure>
                                 </div>
                                 <div className="col-md-6">
                                     <h4 className="list-group-item-heading"> {res.name} </h4>
                                     <ul>
-                                        <li>{res.city}</li>
+                                        <li className="glyphicon glyphicon-map-marker">  {res.address} - ({res.city})</li>
                                         <li>{res.is_closed}</li>
+                                        <li className="glyphicon glyphicon-phone">  {res.phone}</li>
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
