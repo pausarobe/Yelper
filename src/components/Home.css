@@ -7,11 +7,15 @@
 }
 h1 {
   margin-top: 200px;
-  font-size: 100px;
-  text-align: center;
+  font-size: 150px;
 }
 
 h4 {
-  text-align: center;
   margin-bottom: 100px;
+  letter-spacing: 20px;
+}
+
+h1, h4 {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
 }
