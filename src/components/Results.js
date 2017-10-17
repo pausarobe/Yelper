@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Results.css'
 import { Rate } from 'antd';
 import 'antd/dist/antd.min.css'
+
 class Results extends Component {
 
 	render() {
@@ -34,7 +35,7 @@ class Results extends Component {
                                     </ul>
                                 </div>
                                 <div className="col-md-3 text-center">
-                                    <a href={ShowSpecificResults}><button type="button" className="btn btn-default btn-lg btn-block">More Info</button></a>
+                                    <button type="button" className="btn btn-default btn-lg btn-block">More Info</button>
 
                                         <Rate disabled allowHalf defaultValue={res.rating} key={res.id}/>
 
