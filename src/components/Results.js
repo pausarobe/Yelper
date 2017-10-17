@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import './Results.css'
-import { Rate } from 'antd'
-// import 'antd/dist/antd.min.css'
 import { Link } from 'react-router-dom'
+
 
 class Results extends Component {
 	render() {
@@ -32,7 +31,6 @@ class Results extends Component {
                     </div>
                     <div className="col-md-3 text-center">
                       <Link to='/specific/:id'><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
-                      <Rate disabled allowHalf defaultValue={res.rating} key={res.id}/>
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
                   </a>
@@ -46,4 +44,5 @@ class Results extends Component {
   }
 }
 
-export default Results
+export default Results;
+
