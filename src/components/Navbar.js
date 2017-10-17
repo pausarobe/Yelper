@@ -13,12 +13,8 @@ const Header = () => (
 	    </Navbar.Header>
 	    <Navbar.Collapse>
 	    	<Navbar.Form pullRight>
-	        	<FormGroup>
-	          		<FormControl type="text" placeholder="Search" />
-	        	</FormGroup>
-	        	{' '}
-	        	<Button type="submit">Submit</Button>
-	      	</Navbar.Form>
+	        	<SearchForm />
+	       	</Navbar.Form>
 	    </Navbar.Collapse>
 	 </Navbar>
 	</div>
