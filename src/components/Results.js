@@ -24,7 +24,7 @@ class Results extends Component {
                       <ul>
                         <li className="glyphicon glyphicon-map-marker">&nbsp; {res.address} - ({res.city})</li>
                         <br/>
-                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed == false ? 'Open' : 'Close'}</li>
+                        <li className="glyphicon glyphicon-time">&nbsp; {res.is_closed === false ? 'Open' : 'Close'}</li>
                         <br/>
                         <li className="glyphicon glyphicon-phone-alt">&nbsp; {res.phone.replace('+34', '')}</li>
                       </ul>

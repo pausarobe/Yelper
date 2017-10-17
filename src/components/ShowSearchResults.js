@@ -54,7 +54,7 @@ class  ShowSearchResults extends Component {
 		console.log(this.state)
 		return (
 			<div>
-			 <Header/>
+				<Header/>
 				<Results inputresults={this.state}/>
 			</div>
 		)

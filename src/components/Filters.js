@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap'
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Header from './Navbar'
+import Footer from './Footer'
+
 class Filters extends Component {
   constructor() {
     super()
@@ -81,9 +82,9 @@ class Filters extends Component {
              <Header/>
                 <div className="container"> 
                     <button type="button"  onClick={this.getFilter} className="btn btn-outline-warning" > Mostrar solo locales abiertos </button>
-                    
                 </div>
                 <Results inputresults={this.state.result}/>
+                <Footer/>
             </div>
         )
     }
