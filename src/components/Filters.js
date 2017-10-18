@@ -133,7 +133,7 @@ class Filters extends Component {
                    </div> 
                 </div>
                 <Results inputresults={this.getResultsLimitForPage()}/>
-                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page}/>
+                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
               
                 <Footer/>
             </div>
