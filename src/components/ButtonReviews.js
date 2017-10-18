@@ -40,7 +40,6 @@ getInitialState() {
 
 		getYelpDataById(this.props.id).then(
 			reviewsData => {
-				console.log(reviewsData)
 			this.setState ({
 	          result:[...reviewsData]
 	            .map(function(review){
@@ -57,7 +56,6 @@ getInitialState() {
 	}
   getApiDataStatic(){
       const image_default = '../img/undef_profile.png'
-      //console.log("DATOS",...getYelpDataStaticById())
       this.setState ({
             result:[...getYelpDataStaticById()]
               .map(function(review){
@@ -70,7 +68,6 @@ getInitialState() {
                       })
               })       
           })
-       console.log("estateButton",this.state)
       }
       
     

@@ -13,6 +13,7 @@ class Filters extends Component {
         super()
         this.state = {
             results: [],
+            numberItemsForPage: 5,
             sortMaxToMin: false
         }
         this.getFilter = this.getFilter.bind(this)
@@ -98,7 +99,9 @@ class Filters extends Component {
                 })
             
     }
-
+    getNumberOfPages(){
+        return this.state.numberItemsForPage
+    }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps
         this.getApiData()
@@ -110,7 +113,6 @@ class Filters extends Component {
     }
 
     render() {
-        //console.log("filters", this.state)
         return (
             <div>
                 <Header/>
@@ -125,7 +127,7 @@ class Filters extends Component {
                    </div> 
                 </div>
                 <Results inputresults={this.state.results}/>
-                <Pagination/>
+                <Pagination Items={this.getNumberOfPages()}/>
               
                 <Footer/>
             </div>

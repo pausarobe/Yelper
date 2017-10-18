@@ -22,7 +22,6 @@ class SearchForm extends Component {
   handleSubmit (e) {
     e.preventDefault()
     this.setState({ fireRedirect: true })
-    console.log(this.state.value)
   }
   componentWillReceiveProps() {
     this.setState({ 
