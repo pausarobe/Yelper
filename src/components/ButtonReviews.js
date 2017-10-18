@@ -7,7 +7,12 @@ class ButtonReviews extends Component {
 		super()
 
 	    this.state = {
-	      showModal:false
+	      showModal:false,
+	      text: '',
+	      time_created: '',
+	      url: '',
+	      image_url: '',
+	      name: ''
 	    }	
 	    this.open=this.open.bind(this)
 	    this.close=this.close.bind(this)
