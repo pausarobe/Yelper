@@ -61,3 +61,6 @@ class Results extends Component {
 }
 export default Results
 
+
+
+// <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
