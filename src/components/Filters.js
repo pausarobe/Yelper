@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import Results from './Results'
 import {getYelpData} from '../services/Api.js'
 import Header from './Navbar'

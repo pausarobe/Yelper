@@ -20,4 +20,7 @@ export function getYelpDataById (id){
     })
     .then(response => response)
 }
+
+const googleMaps = 'AIzaSyAlxR6HdRdBNeXImyEAn3VkSWZFiOooESk'
+
     

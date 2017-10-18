@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import Filters from './Filters'
-import ShowSpecificResults from './ShowSpecificResults'
 
 const Main = (props) => {
 	return (
@@ -11,7 +10,6 @@ const Main = (props) => {
   		<Switch>
         <Route exact path='/' component={Home} />
         <Route path='/search/:query' component={Filters} />
-        <Route path='/specific/:id' component={ShowSpecificResults} />
       </Switch>
     </div>
   )
