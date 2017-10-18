@@ -1,9 +1,54 @@
 import React, { Component } from 'react'
+import {getYelpDataById } from '../services/Api.js'
 
-const ButtonReviews = () => (
-  <button type="button" className="btn btn-default btn-lg btn-block">Yelper</button>
+class ButtonReviews extends Component { 
+	constructor() {
+		super()
+
+	    this.state = {
+	      result: [{
+	        rating: '',
+	        text: '',
+	        time_created: '',
+	        url: '',
+	        image_url: '',
+	        name: ''
+	      }]
+	    }	
+	}
+
+	getApiData(){
+		getYelpDataById(this.props.id).then(
+			reviews => {
+				console.log(reviews && true || '')
+
+				//console.log(reviews.data.reviews.map(function (review) {
+				
+
+				//	return review.rating
+				
+
+				//}))
+
+			this.setState ({
+	          result:[{
+	          	rating: reviews,
+	          }]
+	            
+	        })
+			})
+	}
+
+  	componentDidMount(){
+    	this.getApiData()
+  	}	
+
+	render() {
+		return (<button type="button" className="btn btn-default btn-lg btn-block">Yelper</button>
+	)}
   
-)
+}
+
 export default ButtonReviews
 
 

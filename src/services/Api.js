@@ -18,7 +18,7 @@ export function getYelpDataById (id){
            Authorization: `${token}`
         }
     })
-    .then(response => response)
+    .then(response => response.data.reviews)
 }
 
 const googleMaps = 'AIzaSyAlxR6HdRdBNeXImyEAn3VkSWZFiOooESk'
