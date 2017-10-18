@@ -8,17 +8,17 @@ import './Results.css'
 
 class Results extends Component {
     render() {
-    return (
+    return (<div>
       <div className="container">
         <div className="row">
           <div className="well">
             <div className="list-group">
               {this.props.inputresults.map((res) => {
                 return (
-                  <a className="results-a list-group-item">
+                  <section className="results-a list-group-item">
                     <div className="media col-md-3">
                       <figure className="pull-left">
-                        <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} alt="placehold.it/350x250" />
+                        <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} alt="image not provided" />
                       </figure>
                     </div>
                     <div className="col-md-6">
@@ -36,14 +36,25 @@ class Results extends Component {
                       <Rater id="stars" interactive={false} rating={res.rating}/>
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
-                  </a>
-
+                  </section>
                 )
               })}
             </div>
           </div>
         </div>
       </div>
+        <div className="container text-center">
+            <ul className="pagination">
+                <li className="disabled"><a href="#">«</a></li>
+                <li className="active"><a href="#">1 <span className="sr-only">(current)</span></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
     )
   }
 }

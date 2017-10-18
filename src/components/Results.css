@@ -4,16 +4,13 @@
     margin: 30px;
     padding: 20px;
     border-radius: 10px;
-    font-size: 1.5em;
     }
 
-a.list-group-item {
+section.list-group-item {
     height:auto;
     min-height:220px;
 }
-a.list-group-item.active small {
-    color:#fff;
-}
+
 
 .glyphicon-force-font {
     font-family: 'Glyphicons Halflings' !important;
@@ -33,7 +30,9 @@ img {
     max-height: 200px;
 }
 
-@media only screen 
+.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
+
+/*@media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 990px) {
 
@@ -45,7 +44,7 @@ button {
     display: none;
 }
 
-}
+}*/
 
 
 .react-rater {
