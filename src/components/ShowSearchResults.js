@@ -23,7 +23,7 @@ class  ShowSearchResults extends Component {
 	getApiData(){
 	    getYelpData(this.props.match.params.query).then(
 	      dataSearchYelp => {
-	      	console.log(this.props.match.params.query)
+	      	console.log(dataSearchYelp)
 	        this.setState({
 	          result:[...dataSearchYelp]
 	            .map(function(yelpData){

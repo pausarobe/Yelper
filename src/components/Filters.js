@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Header from './Navbar'
@@ -15,9 +15,9 @@ class Filters extends Component {
                 is_closed: '',
                 rating: '',
                 city: '',
-                url: '', 
+                url: '',
                 address: '',
-                phone: '' 
+                phone: ''
             }]
         }
     this.getFilter=this.getFilter.bind(this)
