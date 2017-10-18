@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
+import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
 
@@ -32,6 +33,7 @@ class Results extends Component {
                       </ul>
                     </div>
                     <div className="col-md-3 text-center nolink">
+                    <ButtonReviews />
                       <Rater id="stars" interactive={false} rating={res.rating}/>
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
