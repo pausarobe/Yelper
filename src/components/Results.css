@@ -21,7 +21,7 @@ ul {
 }
 
 #stars {
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: none !important;
 }
 
@@ -60,9 +60,9 @@ button {
     .react-rater a.will-be-active {
       color: #ffdd99; }
     .react-rater a.is-active {
-      color: red; }
+      color: gold; }
     .react-rater a.is-active-half:before {
-      color: red;
+      color: gold;
       content: '\2605';
       position: absolute;
       left: 0;
@@ -70,11 +70,7 @@ button {
       overflow: hidden; }
 
 
-.center {
-    margin-top:50px;   
-}
-
-.modal-header {
+/*.modal-header {
     padding-bottom: 5px;
 }
 
@@ -92,4 +88,4 @@ button {
     
 .modal-footer .btn-group:last-child > button {
     border-right: 0;
-}
+}*/

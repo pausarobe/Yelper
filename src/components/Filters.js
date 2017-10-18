@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Results from './Results'
-import {getYelpData,getYelpDataStatic} from '../services/Api.js'
+import {getYelpData} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
 import { Navbar } from 'react-bootstrap'
@@ -39,6 +39,7 @@ class Filters extends Component {
             })
 
             this.forceUpdate()
+            
         }else{
             this.setState(prevState => {
                 results:prevState.results.sort((buss1, buss2) => {
@@ -54,11 +55,8 @@ class Filters extends Component {
     }
 
     getApiData() {
-
         getYelpData(this.props.match.params.query).then(
             dataSearchYelp => {
-              console.log("map",dataSearchYelp)
-              console.log("mapDES",[...dataSearchYelp])
                 this.setState({
                     results: [...dataSearchYelp]
                         .map(function (yelpData) {
@@ -78,25 +76,6 @@ class Filters extends Component {
 
             })
 
-    }
-    getApiDataStatic() {
-         this.setState({
-                    results: [...getYelpDataStatic()]
-                        .map(function (yelpData) {
-                            return (   {
-                                id: yelpData.id,
-                                name: yelpData.name,
-                                image_url: yelpData.image_url,
-                                is_closed: yelpData.is_closed,
-                                rating: yelpData.rating,
-                                city: yelpData.location.city,
-                                url: yelpData.url,
-                                address: yelpData.location.address1,
-                                phone: yelpData.display_phone
-                            })
-                        })
-                })
-            
     }
 
     componentWillReceiveProps(nextProps) {
