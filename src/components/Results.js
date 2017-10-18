@@ -32,7 +32,6 @@ class Results extends Component {
                       </ul>
                     </div>
                     <div className="col-md-3 text-center nolink">
-                      <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
                       <Rater id="stars" interactive={false} rating={res.rating}/>
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
@@ -60,3 +59,6 @@ class Results extends Component {
 }
 export default Results
 
+
+
+// <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>
