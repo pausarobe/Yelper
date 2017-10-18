@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 const ButtonReviews = () => (
   <button type="button" className="btn btn-default btn-lg btn-block">Yelper</button>
+  
 )
 export default ButtonReviews
 
