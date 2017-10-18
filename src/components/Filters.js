@@ -114,10 +114,10 @@ class Filters extends Component {
                 <Header/>
                 <div className="container">
                 <div className="filters">
-         <button type="button" onClick={this.getFilter} className="btn btn-default btn-lg btn-block"> Mostrar solo
+         <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo
                         locales abiertos
           </button>
-         <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-lg btn-block">Filtrar por
+         <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Filtrar por
                         rating
           </button>
                    </div> 
