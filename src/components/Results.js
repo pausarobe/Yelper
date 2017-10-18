@@ -33,7 +33,7 @@ class Results extends Component {
                       </ul>
                     </div>
                     <div className="col-md-3 text-center nolink">
-                    <ButtonReviews />
+                    <ButtonReviews id={res.id} />
                       <Rater id="stars" interactive={false} rating={res.rating}/>
                       <p> Average {res.rating} <small> / </small> 5 </p>
                     </div>
