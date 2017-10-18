@@ -1,21 +1,25 @@
 import React, { Component } from 'react'
-import {getYelpDataById } from '../services/Api.js'
-import { FormGroup, FormControl, InputGroup, Button,Popover,Tooltip,Modal,OverlayTrigger } from 'react-bootstrap'
+import {getYelpDataById,getYelpDataStaticById } from '../services/Api.js'
+import { FormGroup, FormControl, InputGroup, Button,Popover,Tooltip,Modal,OverlayTrigger, Image } from 'react-bootstrap'
 
 class ButtonReviews extends Component { 
 	constructor() {
 		super()
 	    this.state = {
 	      showModal:false,
-	      text: '',
-	      time_created: '',
-	      url: '',
-	      image_url: '',
-	      name: ''
+	      result: [{
+	      	text: '',
+		      time_created: '',
+		      url: '',
+		      image_url: '',
+		      name: ''
+	      }]
+	      
 	    }
 	    this.open=this.open.bind(this)
 	    this.close=this.close.bind(this)
 	    this.getInitialState=this.getInitialState.bind(this)
+      this.getApiDataStatic=this.getApiDataStatic.bind(this)
 	}
 getInitialState() {
     return { showModal: false };
@@ -27,6 +31,7 @@ getInitialState() {
 
   open() {
   	this.setState({ showModal: true });
+    //this.getApiDataStatic()
   }
 	getApiData(){
 
@@ -36,7 +41,6 @@ getInitialState() {
 		getYelpDataById(this.props.id).then(
 			reviewsData => {
 				console.log(reviewsData)
-
 			this.setState ({
 	          result:[...reviewsData]
 	            .map(function(review){
@@ -51,9 +55,29 @@ getInitialState() {
 	        })
 			})
 	}
-
+  getApiDataStatic(){
+      const image_default = '../img/undef_profile.png'
+      //console.log("DATOS",...getYelpDataStaticById())
+      this.setState ({
+            result:[...getYelpDataStaticById()]
+              .map(function(review){
+                return ({rating: review.rating,
+                          text: review.text,
+                          time_created: review.time_created,
+                          url: review.url,
+                          image_url: true && review.user.image_url || image_default,
+                          name: review.user.name
+                      })
+              })       
+          })
+       console.log("estateButton",this.state)
+      }
+      
+    
+      
   	componentDidMount(){
-    	this.getApiData()
+    	//this.getApiData()
+      this.getApiDataStatic()
   	}	
 
 	render() {
@@ -87,8 +111,9 @@ getInitialState() {
             <p>user comments and valorations</p>
             <hr />
             <h4>keep calm and search easy...</h4>
-            {this.state.id.map(function(showReview) {
-            	<div>
+            {this.state.result.map(function(showReview) {
+            	return (
+            		<div>
             		<figure>
             			<Image src={showReview.image_url} alt={showReview.name} responsive />
 	            	</figure>
@@ -97,6 +122,8 @@ getInitialState() {
 	            	<p>{showReview.url}</p>
 	            	<p>{showReview.time_created}</p>
             	</div>
+            		)
+            	
             })}
           </Modal.Body>
           <Modal.Footer>

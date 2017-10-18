@@ -4,6 +4,7 @@ import {getYelpData,getYelpDataStatic} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
 import { Navbar } from 'react-bootstrap'
+import ButtonReviews from './ButtonReviews'
 import './Filter.css'
 
 class Filters extends Component {
@@ -123,6 +124,7 @@ class Filters extends Component {
                    </div> 
                 </div>
                 <Results inputresults={this.state.results}/>
+              
                 <Footer/>
             </div>
         )
