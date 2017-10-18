@@ -21,7 +21,7 @@ ul {
 }
 
 #stars {
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: none !important;
 }
 
@@ -70,11 +70,7 @@ button {
       overflow: hidden; }
 
 
-.center {
-    margin-top:50px;   
-}
-
-.modal-header {
+/*.modal-header {
     padding-bottom: 5px;
 }
 
@@ -92,4 +88,4 @@ button {
     
 .modal-footer .btn-group:last-child > button {
     border-right: 0;
-}
+}*/
