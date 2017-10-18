@@ -18,23 +18,24 @@ class ButtonReviews extends Component {
 	}
 
 	getApiData(){
+
+		const image_default = '../img/undef_profile.png'
+
 		getYelpDataById(this.props.id).then(
-			reviews => {
-				console.log(reviews && true || '')
-
-				//console.log(reviews.data.reviews.map(function (review) {
-				
-
-				//	return review.rating
-				
-
-				//}))
+			reviewsData => {
+				console.log(reviewsData)
 
 			this.setState ({
-	          result:[{
-	          	rating: reviews,
-	          }]
-	            
+	          result:[...reviewsData]
+	            .map(function(review){
+	            	return ({rating: review.rating,
+	            		        text: review.text,
+	            		        time_created: review.time_created,
+	            		        url: review.url,
+	            		        image_url: true && review.user.image_url || image_default,
+	            		        name: review.user.name
+	            		    })
+	          	})       
 	        })
 			})
 	}
