@@ -14,6 +14,7 @@ class Filters extends Component {
         this.state = {
             results: [],
             numberItemsForPage: 5,
+            pageActive: 1,
             sortMaxToMin: false
         }
         this.getFilter = this.getFilter.bind(this)
@@ -99,15 +100,15 @@ class Filters extends Component {
                 })
             
     }
-    getNumberOfPages(){
-        return this.state.numberItemsForPage
+    getNumberOfItemsForPage(){
+        return Math.floor(this.state.results.length / this.state.numberItemsForPage )
+
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps
         this.getApiData()
 
     }
-
     componentDidMount() {
         this.getApiDataStatic()
     }
@@ -126,8 +127,8 @@ class Filters extends Component {
           </button>
                    </div> 
                 </div>
-                <Results inputresults={this.state.results}/>
-                <Pagination Items={this.getNumberOfPages()}/>
+                <Results inputresults={this.state.results} maxItemsforPage={this.state.numberItemsForPage}/>
+                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.state.pageActive}/>
               
                 <Footer/>
             </div>
