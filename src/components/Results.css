@@ -60,9 +60,9 @@ button {
     .react-rater a.will-be-active {
       color: #ffdd99; }
     .react-rater a.is-active {
-      color: red; }
+      color: gold; }
     .react-rater a.is-active-half:before {
-      color: red;
+      color: gold;
       content: '\2605';
       position: absolute;
       left: 0;
