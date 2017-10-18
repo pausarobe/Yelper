@@ -6,6 +6,7 @@ import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
+import showMaps from './showMaps'
 
 class Results extends Component {
     render() {
@@ -30,6 +31,8 @@ class Results extends Component {
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-time">&nbsp;</span> {res.is_closed === false ? 'Open' : 'Close'}</li>
                         <br/>
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-phone-alt">&nbsp;</span> {res.phone.replace('+34', '')}</li>
+                        <br/>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-globe">&nbsp;</span> <a href={res.url}>{res.name}</a></li>
                       </ul>
                     </div>
                     <div className="col-md-3 text-center nolink">
