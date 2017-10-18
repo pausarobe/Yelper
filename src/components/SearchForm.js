@@ -51,7 +51,7 @@ class SearchForm extends Component {
         </FormGroup>
         {
           fireRedirect && query &&
-          <Redirect to={`/search/${query}`} push />
+          <Redirect to={`/search/${query}/page/1`} push />
         }
       </form>
     )

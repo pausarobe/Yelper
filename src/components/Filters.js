@@ -14,7 +14,6 @@ class Filters extends Component {
         this.state = {
             results: [],
             numberItemsForPage: 5,
-            pageActive: 1,
             sortMaxToMin: false
         }
         this.getFilter = this.getFilter.bind(this)
@@ -104,6 +103,12 @@ class Filters extends Component {
         return Math.floor(this.state.results.length / this.state.numberItemsForPage )
 
     }
+    getResultsLimitForPage(){
+        const startPosition= ((this.props.match.params.page * this.state.numberItemsForPage)-this.state.numberItemsForPage)
+        const endPosition =(this.props.match.params.page * this.state.numberItemsForPage)
+        return this.state.results.slice(startPosition,endPosition)
+         
+    }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps
         this.getApiData()
@@ -127,8 +132,8 @@ class Filters extends Component {
           </button>
                    </div> 
                 </div>
-                <Results inputresults={this.state.results} maxItemsforPage={this.state.numberItemsForPage}/>
-                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.state.pageActive}/>
+                <Results inputresults={this.getResultsLimitForPage()}/>
+                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page}/>
               
                 <Footer/>
             </div>
