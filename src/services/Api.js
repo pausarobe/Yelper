@@ -955,7 +955,7 @@ export function getYelpDataById (id){
     .then(response => response.data.reviews)
 }
 export function getYelpDataStatic(){
-  return staticbusinesses
+  return staticbusinesses.businesses
 } 
 
 //const googleMaps = 'AIzaSyAlxR6HdRdBNeXImyEAn3VkSWZFiOooESk'
