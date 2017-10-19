@@ -3,3 +3,9 @@
 	margin-bottom: 1%;
 	margin-left: 1%;
 }
+
+.background-image-results {
+  background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+} 

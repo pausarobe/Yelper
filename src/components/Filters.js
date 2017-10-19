@@ -3,8 +3,6 @@ import Results from './Results'
 import {getYelpData,getYelpDataStatic} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
-import { Navbar } from 'react-bootstrap'
-import ButtonReviews from './ButtonReviews'
 import Pagination from './Pagination'
 import { Redirect } from 'react-router-dom';    
 import './Filter.css'
@@ -59,6 +57,7 @@ class Filters extends Component {
     }
 
     getApiData() {
+        const business_default = 'https://renderman.pixar.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'
         getYelpData(this.props.match.params.query).then(
             dataSearchYelp => {
                 this.setState({
@@ -67,7 +66,7 @@ class Filters extends Component {
                             return (   {
                                 id: yelpData.id,
                                 name: yelpData.name,
-                                image_url: yelpData.image_url,
+                                image_url: true && yelpData.image_url || business_default,
                                 is_closed: yelpData.is_closed,
                                 rating: yelpData.rating,
                                 city: yelpData.location.city,
@@ -126,27 +125,22 @@ class Filters extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <Header/>
-                <div className="container">
-                <div className="filters">
+      return (
+        <div className="background-image-results">
+          <Header/>
+            <div className="container">
+              <div className="filters">
+                <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo locales abiertos</button>
+                <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Order By Average <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li></button>
+              </div>
+             </div>
+          <Results inputresults={this.getResultsLimitForPage()}/>
+          <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
+          <Footer/>
+        </div>
 
-                    <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo
-                        locales abiertos
-                    </button>
-                    <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">
-                        Order By Average <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li>
-                    </button>
-                </div> 
-
-                </div>
-                <Results inputresults={this.getResultsLimitForPage()}/>
-                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
-                <Footer/>
-            </div>
-        )
+      )
     }
 }
 
-export default Filters;
+export default Filters

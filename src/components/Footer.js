@@ -37,13 +37,13 @@ class Footer extends Component {
             <div className="divCollapse" >
 
        <div id="about" className="collapse divFooterAbout">
-   <p>YelperBCN es una aplicación basada en la API pública de yelp.com mediante la cual podemos acceder a una gran base de datos sobre distintos tipos de negocios.
+   <p> <br/> <br/> <br/>YelperBCN es una aplicación basada en la API pública de yelp.com mediante la cual podemos acceder a una gran base de datos sobre distintos tipos de negocios.
 Mediante el buscador podemos introducir peticiones de busqueda tales como el nombre un tipo de negocio o un producto en concreto.
 Los resultados se van a presentar en una lista con información detallada de la búsqueda. Posteriormente se puede seleccionar uno de los elementos listados para acceder a sus reviews.</p>
         </div>
 
     <div id="yelperbcn" className="collapse divFooterYelperBcn">
-    <p>YelperBCN surge como un proyecto de equipo propuesto por la academia Skylabcoders a fin de consolidar los conocimientos adqueridos durante el curso en el apartado front-end.</p>
+    <p> <br/> <br/> <br/>YelperBCN surge como un proyecto de equipo propuesto por la academia Skylabcoders a fin de consolidar los conocimientos adqueridos durante el curso en el apartado front-end.</p>
     </div>
 
         <div id="contact" className="collapse divFooterContact">
@@ -59,7 +59,7 @@ Los resultados se van a presentar en una lista con información detallada de la 
 
 <div id="thanksto" className="collapse divFooterThanksTo">
 
-THANKS TO
+<br/> <br/> <br/>THANKS TO
 
 Desde YelperBCN queremos agradecer a Juanma Garrido, Manuel Barzi, Joan Albert, Alex Delgado, Angels Gilabert y David Monreal por la dedicación y atención para este proyecto.
 </div>

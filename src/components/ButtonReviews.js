@@ -102,7 +102,6 @@ getInitialState() {
             </div>
             {this.state.result.map(function(showReview) {
               return (
-
                 <Jumbotron>
                   <div className="container">
                     <Row>
