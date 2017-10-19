@@ -16,11 +16,11 @@ class Footer extends Component {
     }
 
     render() {
-
+    console.log("STYLEEE", this.props.style)
     return (
 
       <div>
-    <Navbar inverse collapseOnSelect className="nav-selector">
+    <Navbar inverse collapseOnSelect className={ `nav-selector ${this.props.style}` }  >
       <Navbar.Header>
         
         <Navbar.Toggle />

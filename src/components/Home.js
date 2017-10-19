@@ -5,7 +5,6 @@ import SearchForm from './SearchForm'
 import Footer from './Footer'
 
 import './Home.css'
-
 const Home = () => (
   <div className="background-image">
     <Grid>
@@ -19,7 +18,7 @@ const Home = () => (
         </Col>
       </Row>
     </Grid>
-    <Footer />
+    <Footer style={'position-nav-selector-absolute'}/>
   </div>
 )
 
