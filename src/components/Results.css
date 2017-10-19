@@ -1,18 +1,3 @@
-/*.body {
-    border: 1px solid #aaa;
-    _width: 100%;
-    margin: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    }*/
-
-<<<<<<< HEAD
-=======
-.well {
-  padding: none !important;
-}
-
->>>>>>> 118d1f880a0b14d55f17d221c48fbfd176a246cb
 section.list-group-item {
     height:auto;
     min-height:220px;
