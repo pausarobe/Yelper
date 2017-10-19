@@ -957,6 +957,9 @@ export function getYelpDataById (id){
 export function getYelpDataStatic(){
   return staticbusinesses.businesses
 } 
+export function getYelpDataStaticById(){
+  return statisId.reviews
+} 
 
 //const googleMaps = 'AIzaSyAlxR6HdRdBNeXImyEAn3VkSWZFiOooESk'
 

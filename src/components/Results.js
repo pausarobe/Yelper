@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 
-import { Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
+import ShowMaps from './showMaps'
 
 class Results extends Component {
     render() {
@@ -30,6 +31,11 @@ class Results extends Component {
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-time">&nbsp;</span> {res.is_closed === false ? 'Open' : 'Close'}</li>
                         <br/>
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-phone-alt">&nbsp;</span> {res.phone.replace('+34', '')}</li>
+                        <br/>
+                        <li className="glyphicon"><span className="glyphicon-force-font glyphicon-globe">&nbsp;</span> <a href={res.url}>{res.name}</a></li>
+                        <li>
+                          <ShowMaps/>
+                        </li>
                       </ul>
                     </div>
                     <div className="col-md-3 text-center nolink">
@@ -44,23 +50,9 @@ class Results extends Component {
           </div>
         </div>
       </div>
-        <div className="container text-center">
-            <ul className="pagination">
-                <li className="disabled"><a href="#">«</a></li>
-                <li className="active"><a href="#">1 <span className="sr-only">(current)</span></a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">»</a></li>
-            </ul>
-        </div>
-    </div>
+  </div>
+
     )
   }
 }
 export default Results
-
-
-
-// <Link to={`/specific/${res.id}`} state={this.state}><button type="button" className="btn btn-default btn-lg btn-block">Yelper</button></Link>

@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
-import {getYelpDataById } from '../services/Api.js'
-import { FormGroup, FormControl, InputGroup, Button,Popover,Tooltip,Modal,OverlayTrigger } from 'react-bootstrap'
+import {getYelpDataById,getYelpDataStaticById } from '../services/Api.js'
+import { FormGroup, FormControl, InputGroup, Button,Popover,Tooltip,Modal,OverlayTrigger, Image } from 'react-bootstrap'
 
 class ButtonReviews extends Component { 
 	constructor() {
 		super()
-
 	    this.state = {
 	      showModal:false,
-	      text: '',
-	      time_created: '',
-	      url: '',
-	      image_url: '',
-	      name: ''
-	    }	
+	      result: [{
+	      	text: '',
+		      time_created: '',
+		      url: '',
+		      image_url: '',
+		      name: ''
+	      }]
+	      
+	    }
 	    this.open=this.open.bind(this)
 	    this.close=this.close.bind(this)
 	    this.getInitialState=this.getInitialState.bind(this)
+      this.getApiDataStatic=this.getApiDataStatic.bind(this)
 	}
 getInitialState() {
     return { showModal: false };
@@ -28,6 +31,7 @@ getInitialState() {
 
   open() {
   	this.setState({ showModal: true });
+    //this.getApiDataStatic()
   }
 	getApiData(){
 
@@ -36,8 +40,6 @@ getInitialState() {
 
 		getYelpDataById(this.props.id).then(
 			reviewsData => {
-				console.log(reviewsData)
-
 			this.setState ({
 	          result:[...reviewsData]
 	            .map(function(review){
@@ -52,13 +54,31 @@ getInitialState() {
 	        })
 			})
 	}
-
+  getApiDataStatic(){
+      const image_default = '../img/undef_profile.png'
+      this.setState ({
+            result:[...getYelpDataStaticById()]
+              .map(function(review){
+                return ({rating: review.rating,
+                          text: review.text,
+                          time_created: review.time_created,
+                          url: review.url,
+                          image_url: true && review.user.image_url || image_default,
+                          name: review.user.name
+                      })
+              })       
+          })
+      }
+      
+    
+      
   	componentDidMount(){
-    	this.getApiData()
+    	//this.getApiData()
+      this.getApiDataStatic()
   	}	
 
 	render() {
-		 const popover = (
+		const popover = (
       <Popover id="modal-popover" title="popover">
         very popover. such engagement
       </Popover>
@@ -71,141 +91,44 @@ getInitialState() {
 
 		return (
 			<div>
-        <p>Click to get the full Modal experience!</p>
-
         <Button
-          bsStyle="primary"
+          bsStyle="default"
           bsSize="large"
           onClick={this.open}
         >
-          Launch demo modal
+          show user reviews
         </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>YelperBCN</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-
-            <h4>Popover in a modal</h4>
-            <p>there is a <OverlayTrigger overlay={popover}><a href="#">popover</a></OverlayTrigger> here</p>
-
-            <h4>Tooltips in a modal</h4>
-            <p>there is a <OverlayTrigger overlay={tooltip}><a href="#">tooltip</a></OverlayTrigger> here</p>
-
+            <h2>USER REVIEWS</h2>
+            <p>user comments and valorations</p>
             <hr />
-
-            <h4>Overflowing text to show scroll behavior</h4>
-            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <h4>keep calm and search easy...</h4>
+            {this.state.result.map(function(showReview) {
+            	return (
+            		<div>
+            		<figure>
+            			<Image src={showReview.image_url} alt={showReview.name} responsive />
+	            	</figure>
+	            	<p>{showReview.name}</p>
+	            	<p>{showReview.text}</p>
+	            	<p>{showReview.url}</p>
+	            	<p>{showReview.time_created}</p>
+            	</div>
+            		)
+            	
+            })}
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>
-	)}
-  
+	)} 
 }
 
 export default ButtonReviews
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react'
-// import Reviews from './Reviews'
-// import {getYelpDataById } from '../services/Api.js'
-// import Header from './Navbar'
-
-// class  ShowSpecificResults extends Component {
-//   constructor () {
-//     super()
-//     this.state = {
-//       result: [{
-//         rating: '',
-//         text: '',
-//         time_created: '',
-//         url: '',
-//         image_url: '',
-//         name: ''
-//       }]
-//     }
-//   }
-//   getApiData () {
-//     getYelpDataById(this.props.match.params['id']).then(
-//       dataSearchYelp => {
-//         console.log(this.props.match.params.id)
-//         this.setState({
-//           result: [...dataSearchYelp]
-//             .map(function (yelpData) {
-//               return ({
-//                 rating: '',
-//                 text: '',
-//                 time_created: '',
-//                 url: '',
-//                 image_url: '',
-//                 name: ''
-//               })
-//             })
-//         })
-//       }
-//     )
-//   }
-//   componentWillReceiveProps (nextProps) {
-//     this.props = nextProps
-//     this.getApiData()
-//   }
-//   // componentDidMount=() => {
-//   //   var idToSearch = this.props.match.params['id']
-//   //   getYelpDataById(idToSearch).then((data)=>{
-//   //     console.log(this.props.match.params.id)
-//   //     this.setState({
-//   //         result: [...getYelpDataById]
-//   //           .map(function (yelpData) {
-//   //             return ({
-//   //               rating: '',
-//   //               text: '',
-//   //               time_created: '',
-//   //               url: '',
-//   //               image_url: '',
-//   //               name: ''
-//   //             })
-//   //           })
-//   //       })
-//   //   })
-//   // }
-//   render () {
-//     console.log(this.state)
-//     return (
-//       <div>
-//         <Header />
-//         <Reviews userReviews={this.state} />
-//       </div>
-//     )
-//   }
-// }
-
-// export default ShowSpecificResults

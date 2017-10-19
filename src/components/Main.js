@@ -9,7 +9,7 @@ const Main = (props) => {
   	<div>
   		<Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/search/:query' component={Filters} />
+        <Route path='/search/:query/page/:page' component={Filters} />
       </Switch>
     </div>
   )

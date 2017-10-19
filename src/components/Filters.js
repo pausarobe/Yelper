@@ -4,6 +4,8 @@ import {getYelpData,getYelpDataStatic} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
 import { Navbar } from 'react-bootstrap'
+import ButtonReviews from './ButtonReviews'
+import Pagination from './Pagination'
 import './Filter.css'
 
 class Filters extends Component {
@@ -11,6 +13,7 @@ class Filters extends Component {
         super()
         this.state = {
             results: [],
+            numberItemsForPage: 5,
             sortMaxToMin: false
         }
         this.getFilter = this.getFilter.bind(this)
@@ -96,33 +99,44 @@ class Filters extends Component {
                 })
             
     }
+    getNumberOfItemsForPage(){
+        return Math.floor(this.state.results.length / this.state.numberItemsForPage )
 
+    }
+    getResultsLimitForPage(){
+        const startPosition= ((this.props.match.params.page * this.state.numberItemsForPage)-this.state.numberItemsForPage)
+        const endPosition =(this.props.match.params.page * this.state.numberItemsForPage)
+        return this.state.results.slice(startPosition,endPosition)
+         
+    }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps
         this.getApiData()
 
     }
-
     componentDidMount() {
         this.getApiDataStatic()
     }
 
     render() {
-        //console.log("filters", this.state)
         return (
             <div>
                 <Header/>
                 <div className="container">
                 <div className="filters">
+
          <button type="button" onClick={this.getFilter} className="btn btn-default btn-lg "> Mostrar solo
                         locales abiertos
           </button>
          <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-lg">Filtrar por
+
                         rating
           </button>
                    </div> 
                 </div>
-                <Results inputresults={this.state.results}/>
+                <Results inputresults={this.getResultsLimitForPage()}/>
+                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
+              
                 <Footer/>
             </div>
         )
