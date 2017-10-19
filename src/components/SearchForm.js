@@ -33,7 +33,7 @@ class SearchForm extends Component {
   render () {
     const { fireRedirect, value: query } = this.state
     return (
-      <form  className="SearchForm" onSubmit={ this.handleSubmit }>
+      <form className="SearchForm " onSubmit={ this.handleSubmit }>
         <FormGroup>
           <InputGroup bsSize='lg'>
             <FormControl

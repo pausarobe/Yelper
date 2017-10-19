@@ -14,11 +14,11 @@ const Home = () => (
             <h1>Yelper</h1>
             <h4>BARCELONA</h4>
           </div>
-            <SearchForm />
+          <SearchForm />
         </Col>
       </Row>
     </Grid>
-    <Footer style={'position-nav-selector-absolute'}/>
+    <Footer style={'position-nav-selector-absolute'} />
   </div>
 )
 
