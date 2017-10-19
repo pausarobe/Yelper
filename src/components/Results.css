@@ -6,6 +6,11 @@
     border-radius: 10px;
     }
 
+.background-image-results {
+  background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
+  background-size: contain; 
+} 
+
 section.list-group-item {
     height:auto;
     min-height:220px;

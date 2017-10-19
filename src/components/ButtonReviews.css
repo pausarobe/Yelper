@@ -1,0 +1,12 @@
+@media (min-width: 450px) {
+  .user-image img {
+    width: 160px;
+    height: 160px;
+    margin: 10px 0;
+  }
+  .reviews-text p {
+    font-size: 17px;
+    background: white;
+    padding: 10px;
+  }
+}

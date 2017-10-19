@@ -72,7 +72,9 @@ class Filters extends Component {
                                 city: yelpData.location.city,
                                 url: yelpData.url,
                                 address: yelpData.location.address1,
-                                phone: yelpData.display_phone
+                                phone: yelpData.display_phone,
+                                latitude:yelpData.coordinates.latitude,
+                                longitude:yelpData.coordinates.longitude
                             })
                         })
                 })
@@ -93,7 +95,9 @@ class Filters extends Component {
                                 city: yelpData.location.city,
                                 url: yelpData.url,
                                 address: yelpData.location.address1,
-                                phone: yelpData.display_phone
+                                phone: yelpData.display_phone,
+                                latitude:yelpData.coordinates.latitude,
+                                longitude:yelpData.coordinates.longitude
                             })
                         })
                 })
@@ -135,7 +139,6 @@ class Filters extends Component {
                 </div>
                 <Results inputresults={this.getResultsLimitForPage()}/>
                 <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
-              
                 <Footer/>
             </div>
         )

@@ -11,14 +11,14 @@ const Home = () => (
     <Grid>
       <Row>
         <Col lgOffset={2} lg={8}>
-          <div>
+          <div className="title">
             <h1>Yelper</h1>
             <h4>BARCELONA</h4>
-            <SearchForm />
           </div>
+            <SearchForm />
         </Col>
       </Row>
-      </Grid>
+    </Grid>
     <Footer />
   </div>
 )
