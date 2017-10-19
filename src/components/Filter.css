@@ -6,6 +6,6 @@
 
 .background-image-results {
   background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
-  background-size: contain;
-  background-repeat: repeat;
-} 
+  background-size: cover;
+  min-height: 100vh;
+}

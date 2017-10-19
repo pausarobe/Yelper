@@ -14,7 +14,7 @@ class Results extends Component {
 
   render () {
     return (
-      <div className="background-image-results">
+      <div>
         <div className="container">
           <div className="row">
 
