@@ -22,7 +22,6 @@ class  ShowSearchResults extends Component {
     	}
 	}
 	getApiData(){
-		const business_default = 'https://renderman.pixar.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'
 
 	    getYelpData(this.props.match.params.query).then(
 	      dataSearchYelp => {
@@ -32,7 +31,7 @@ class  ShowSearchResults extends Component {
 	              return (   {
 	                  id: yelpData.id,
 	                  name: yelpData.name,
-	                  image_url: true && yelpData.image_url || business_default,
+	                  image_url: yelpData.image_url,
 	                  is_closed: yelpData.is_closed,
 	                  rating: yelpData.rating,
 	                  city: yelpData.location.city,
@@ -44,6 +43,7 @@ class  ShowSearchResults extends Component {
 	        })
       })
   	}
+
 	componentWillReceiveProps( nextProps ) {
    		this.props=nextProps
    		this.getApiData()
