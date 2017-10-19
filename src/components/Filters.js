@@ -115,7 +115,7 @@ class Filters extends Component {
 
     }
     componentDidMount() {
-        this.getApiData()
+        this.getApiDataStatic()
         //static
     }
 
