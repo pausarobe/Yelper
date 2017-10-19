@@ -6,6 +6,7 @@ import Footer from './Footer'
 import { Navbar } from 'react-bootstrap'
 import ButtonReviews from './ButtonReviews'
 import Pagination from './Pagination'
+import { Redirect } from 'react-router-dom';    
 import './Filter.css'
 
 class Filters extends Component {
@@ -120,6 +121,7 @@ class Filters extends Component {
     }
     componentDidMount() {
         this.getApiDataStatic()
+        this.getFilterRating()
         //static
     }
 
