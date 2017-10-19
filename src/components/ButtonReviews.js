@@ -74,7 +74,7 @@ getInitialState() {
       
     componentDidMount(){
         //this.getApiData()
-      this.getApiData()
+      this.getApiDataStatic()
     } 
 
   render () {

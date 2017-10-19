@@ -13,7 +13,7 @@ import ShowMaps from './Map'
 class Results extends Component {
   render () {
     return (
-      <div>
+      <div className="background-image-results">
         <div className="container">
           <div className="row">
             <div className="well">
