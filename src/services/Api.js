@@ -47,7 +47,7 @@ const staticbusinesses={
             "id": "avana-sushi-boston",
             "name": "Avana Sushi",
             "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/y8RWhhblmgUTajfeg1E23g/o.jpg",
-            "is_closed": false,
+            "is_closed": true,
             "url": "https://www.yelp.com/biz/avana-sushi-boston?adjust_creative=Vacw_PM1GrG1l8yK3yFyCQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Vacw_PM1GrG1l8yK3yFyCQ",
             "review_count": 834,
             "categories": [
@@ -60,7 +60,7 @@ const staticbusinesses={
                     "title": "Sushi Bars"
                 }
             ],
-            "rating": 4,
+            "rating": 5,
             "coordinates": {
                 "latitude": 42.3515433311481,
                 "longitude": -71.0609420250346
