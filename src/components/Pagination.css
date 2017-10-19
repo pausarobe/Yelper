@@ -2,3 +2,7 @@
     background-color: rgba(0,0,0,0.3);
     border-color: rgba(0,0,0,0.3);
 } 
+
+.pagination>li>a, .pagination>li>span {
+	color: black !important;
+}
