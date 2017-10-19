@@ -119,7 +119,7 @@ class Filters extends Component {
 
     }
     componentDidMount() {
-        this.getApiData()
+        this.getApiDataStatic()
         //static
     }
 
@@ -134,7 +134,7 @@ class Filters extends Component {
                         locales abiertos
                     </button>
                     <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">
-                        Order By <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li>
+                        Order By Average <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li>
                     </button>
                 </div> 
 
