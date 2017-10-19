@@ -8,7 +8,7 @@ import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'rea
 import './ButtonReviews.css'
 
 class ButtonReviews extends Component { 
-    constructor() {
+  constructor() {
         super()
         this.state = {
           showModal:false,
@@ -25,8 +25,8 @@ class ButtonReviews extends Component {
         this.close=this.close.bind(this)
         this.getInitialState=this.getInitialState.bind(this)
       this.getApiDataStatic=this.getApiDataStatic.bind(this)
-    }
-getInitialState() {
+  }
+  getInitialState() {
     return { showModal: false };
   }
   close() {
