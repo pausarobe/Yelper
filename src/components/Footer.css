@@ -26,7 +26,14 @@
 
 }
 
-
 .contacts{
 	color: 
+}
+
+.github_img {
+  height: 30px;
+}
+
+.github_img:hover {
+  opacity: 0.3;
 }

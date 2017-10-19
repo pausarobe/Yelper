@@ -38,7 +38,7 @@ class Footer extends Component {
 
        <div id="about" className="collapse divFooterAbout">
    <p> <br/> <br/> <br/>YelperBCN es una aplicación basada en la API pública de yelp.com mediante la cual podemos acceder a una gran base de datos sobre distintos tipos de negocios.
-Mediante el buscador podemos introducir peticiones de busqueda tales como el nombre un tipo de negocio o un producto en concreto.
+Usando el buscador podemos introducir peticiones de busqueda tales como el nombre un tipo de negocio o un producto en concreto.
 Los resultados se van a presentar en una lista con información detallada de la búsqueda. Posteriormente se puede seleccionar uno de los elementos listados para acceder a sus reviews.</p>
         </div>
 
@@ -50,17 +50,28 @@ Los resultados se van a presentar en una lista con información detallada de la 
 
 <p> <br/> <br/> <br/>YelperBCN ha sido diseñado por cuatro estudiantes de SkylabCoders</p>
 
- <a href="mailto:bootsnipp@gmail.com"> <strong>Pau Sarobe</strong> </a> <br/>
-<a href="mailto:bootsnipp@gmail.com"> <strong>Abel Canet</strong></a><br/>
- <a href="mailto:bootsnipp@gmail.com"> <strong>Nacho Torrella</strong> </a><br/>
- <a href="mailto:bootsnipp@gmail.com"> <strong>Kevin Palomino</strong> </a><br/>
+<div className="container">
+  <div className="row">
+    <div className="col-md-4">
+      <p>Pau Sarobe</p>
+      <p>Abel Canet</p>
+      <p>Nacho Torrella</p>
+      <p>Kevin Palomino</p>
+    </div>
+    <div className="col-md-1">
+      <a href="https://github.com/pausarobe"><img className="github_img" src="https://image.flaticon.com/icons/svg/25/25231.svg" /></a>
+      <a href="https://github.com/eibol87"><img className="github_img" src="https://image.flaticon.com/icons/svg/25/25231.svg" /></a>
+      <a href="https://github.com/agonistickatai"><img className="github_img" src="https://image.flaticon.com/icons/svg/25/25231.svg" /></a>
+      <a href="https://github.com/"><img className="github_img" src="https://image.flaticon.com/icons/svg/25/25231.svg" /></a>
+    </div>
+  </div>
+</div>
  
  </div>
 
 <div id="thanksto" className="collapse divFooterThanksTo">
 
-<br/> <br/> <br/>THANKS TO
-
+<br/> <br/> <br/>
 Desde YelperBCN queremos agradecer a Juanma Garrido, Manuel Barzi, Joan Albert, Alex Delgado, Angels Gilabert y David Monreal por la dedicación y atención para este proyecto.
 </div>
 </div>
