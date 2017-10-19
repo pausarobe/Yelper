@@ -17,8 +17,8 @@ const ShowMaps = withGoogleMap(props =>
 export default ShowMaps;
 
 // <ShowMaps
-//                         containerElement={<div style={{ height: `400px` }} />}
-//                         mapElement={<div style={{ height: `100%` }} />}
-//                         lat={res.latitude}
-//                         lng={res.longitude}
-//                       />
+// 	containerElement={<div style={{ height: `400px` }} />}
+//  mapElement={<div style={{ height: `100%` }} />}
+//  lat={res.latitude}
+//  lng={res.longitude}
+//  />

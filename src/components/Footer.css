@@ -1,9 +1,12 @@
 .nav-selector {
-  margin-top: 300px;
-  margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
+  background-size: cover;
   background-image: none;
   border: none;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .nav-selector .navbar-brand {
@@ -13,4 +16,25 @@
 
 .nav-selector .navbar-nav li a{
   color: white;
+}
+.divCollapse{
+	color:white;
+
+}
+
+.divFooterContact{
+	margin-right: 55%;
+}
+.divFooterAbout{
+	margin-right: 60%;
+}
+.divFooterThanksTo{
+	margin-right: 65%;
+}
+.divFooterYelperBcn{
+	margin-right: 60%;
+}
+
+.contacts{
+	color: 
 }
