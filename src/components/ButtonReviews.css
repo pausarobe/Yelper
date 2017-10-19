@@ -4,9 +4,11 @@
     height: 160px;
     margin: 10px 0;
   }
+
+  .user-image p {
+    text-align: center;
+  }
   .reviews-text p {
     font-size: 17px;
-    background: white;
-    padding: 10px;
   }
 }

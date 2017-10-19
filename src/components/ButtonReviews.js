@@ -106,9 +106,10 @@ getInitialState() {
                   <div className="container">
                     <Row>
                       <Col md={4}>
-                        <picture className="user-image">
+                        <figure className="user-image">
                           <Image src={showReview.image_url} thumbnail rounded />
-                        </picture>
+                          <figcaption><p>{showReview.name}</p></figcaption>
+                        </figure>
                       </Col>
                       <div className="reviews-text">
                         <Col md={4}>
@@ -119,9 +120,6 @@ getInitialState() {
                         </Col>
                         <Col md={8}>
                           <p>{showReview.text}</p>
-                        </Col>
-                        <Col md={12}>
-                          <p>User name: {showReview.name}</p>
                         </Col>
                         <Col md={12}>
                           <p>Date of review: {showReview.time_created}</p>
