@@ -31,7 +31,7 @@ class Results extends Component {
                       <div className="col-md-6">
                         <h2  className="list-group-item-heading center"> {res.name} </h2>
                         <ul>
-                          <LinkMapModal address={res.address} city={res.city}/>
+                          <LinkMapModal address={res.address} city={res.city} latitude={res.latitude} longitude={res.longitude}/>
                           <br/>
                           <li className="glyphicon"><span className="glyphicon-force-font glyphicon-time">&nbsp;</span> {res.is_closed === false ? 'Open' : 'Close'}</li>
                           <br/>
