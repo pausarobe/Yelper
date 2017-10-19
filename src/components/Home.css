@@ -1,10 +1,12 @@
 .background-image {
-  background: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg") no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
+  background-size: cover; 
+} 
+
+.input-form {
+  margin-bottom: 300px;
 }
+
 h1 {
   margin-top: 200px;
   font-size: 150px;
@@ -17,4 +19,25 @@ h4 {
 
 h1, h4 {
   text-align: center;
+}
+
+h3 { 
+  text-align: center;
+  width: 24em;
+  margin: 100px auto;
+  white-space: nowrap;
+  overflow: hidden; 
+}
+
+h3 {
+  animation: typewriter 4s steps(500) 2s infinite normal both,
+             blinkTextPoint 500ms steps(500)  infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 500px;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: transparent;}
+  to{border-right-color: transparent;}
 }

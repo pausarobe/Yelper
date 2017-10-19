@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 
-import { Link } from 'react-router-dom'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
@@ -11,7 +10,8 @@ import showMaps from './showMaps'
 class Results extends Component {
     render() {
     return (<div>
-      <div className="container">
+      <div className="background-image2">
+<div className="container">
         <div className="row">
           <div className="well">
             <div className="list-group">
@@ -59,6 +59,8 @@ class Results extends Component {
             </ul>
         </div>
     </div>
+      </div>
+      
     )
   }
 }

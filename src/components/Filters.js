@@ -111,22 +111,17 @@ class Filters extends Component {
     render() {
         //console.log("filters", this.state)
         return (
-            <div>
-                <Header/>
-                <div className="container">
-                <div className="filters">
-         <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo
-                        locales abiertos
-          </button>
-         <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Filtrar por
-                        rating
-          </button>
-                   </div> 
-                </div>
-                <Results inputresults={this.state.results}/>
-              
-                <Footer/>
-            </div>
+          <div>
+            <Header/>
+            <div className="container">
+              <div className="filters">
+                <button type="button" onClick={this.getFilter} className="btn btn-default btn-md">asignar filtro</button>
+                <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Top rated</button>
+                </div> 
+              </div>
+              <Results inputresults={this.state.results}/>              
+              <Footer/>
+          </div>
         )
     }
 }
