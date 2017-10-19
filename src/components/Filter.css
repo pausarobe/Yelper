@@ -8,4 +8,8 @@
   background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
   background-size: cover;
   min-height: 100vh;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }

@@ -122,7 +122,7 @@ getInitialState() {
                           <p>{showReview.text}</p>
                         </Col>
                         <Col md={12}>
-                          <p>Date of review: {showReview.time_created}</p>
+                          <p>{showReview.time_created}</p>
                         </Col>
                       </div>
                     </Row>

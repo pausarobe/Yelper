@@ -50,7 +50,7 @@ class  ShowSearchResults extends Component {
     
   	}
   	componentDidMount(){
-    	this.getApiDataStatic()
+    	this.getApiData()
   	}
 	render(){
 		return (
