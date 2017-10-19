@@ -4,6 +4,7 @@ import { Nav, NavItem, Navbar } from 'react-bootstrap'
 import './Footer.css'
 
 const Footer = () => {
+
   return(
     <Navbar inverse collapseOnSelect className="nav-selector">
       <Navbar.Header>
