@@ -70,7 +70,9 @@ class Filters extends Component {
                                 city: yelpData.location.city,
                                 url: yelpData.url,
                                 address: yelpData.location.address1,
-                                phone: yelpData.display_phone
+                                phone: yelpData.display_phone,
+                                latitude:yelpData.coordinates.latitude,
+                                longitude:yelpData.coordinates.longitude
                             })
                         })
                 })
@@ -91,7 +93,9 @@ class Filters extends Component {
                                 city: yelpData.location.city,
                                 url: yelpData.url,
                                 address: yelpData.location.address1,
-                                phone: yelpData.display_phone
+                                phone: yelpData.display_phone,
+                                latitude:yelpData.coordinates.latitude,
+                                longitude:yelpData.coordinates.longitude
                             })
                         })
                 })
@@ -114,20 +118,21 @@ class Filters extends Component {
     }
     componentDidMount() {
         this.getApiDataStatic()
+        //static
     }
 
     render() {
       return (
         <div className="background-image-results">
-          <Header />
-          <div className="container">
-            <div className="filters">
-              <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo locales abiertos</button>
-              <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Filtrar por rating</button>
+          <Header/>
+            <div className="container">
+              <div className="filters">
+                <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo locales abiertos</button>
+                <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Order By Average <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li></button>
+              </div>
             </div>
-          </div>
-          <Results inputresults={this.getResultsLimitForPage()} />
-          <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url} />
+          <Results inputresults={this.getResultsLimitForPage()}/>
+          <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
           <Footer />
         </div>
       )

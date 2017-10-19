@@ -11,6 +11,7 @@ import './Results.css'
 import ShowMaps from './Map'
 
 class Results extends Component {
+
   render () {
     return (
       <div className="background-image-results">
@@ -23,7 +24,7 @@ class Results extends Component {
                     <section key={res.id} className="results-a list-group-item">
                       <div className="media col-md-3">
                         <figure className="pull-left">
-                          <img id="bussines-img" className="media-object img-rounded img-responsive" onerror={this.src='../img/img_not_found.png'} src={res.image_url}  />
+                          <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url}  />
                         </figure>
                       </div>
                       <div className="col-md-6">

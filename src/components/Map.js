@@ -4,11 +4,11 @@ import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 const ShowMaps = withGoogleMap(props =>
   <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultZoom={18}
+    defaultCenter={{ lat: props.lat, lng: props.lng }}
   >
     <Marker
-      position={{ lat: -34.397, lng: 150.644 }}
+      position={{ lat: props.lat, lng: props.lng }}
     />
   </GoogleMap>
 );
@@ -17,6 +17,8 @@ const ShowMaps = withGoogleMap(props =>
 export default ShowMaps;
 
 // <ShowMaps
-//   containerElement={<div style={{ height: `400px` }} />}
-//   mapElement={<div style={{ height: `100%` }} />}
-// />
+// 	containerElement={<div style={{ height: `400px` }} />}
+//  mapElement={<div style={{ height: `100%` }} />}
+//  lat={res.latitude}
+//  lng={res.longitude}
+//  />

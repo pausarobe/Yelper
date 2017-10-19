@@ -1,7 +1,7 @@
 .background-image {
   background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h1 {
