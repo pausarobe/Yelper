@@ -4,7 +4,7 @@ import {getYelpData,getYelpDataStatic} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
 import Pagination from './Pagination'
-import { Redirect } from 'react-router-dom';    
+import { Redirect } from 'react-router-dom';  
 import './Filter.css'
 
 class Filters extends Component {
@@ -134,11 +134,11 @@ class Filters extends Component {
                 <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo locales abiertos</button><span>&nbsp;</span>
                 <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Top rated <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li></button>
               </div>
-              <Results inputresults={this.getResultsLimitForPage()}/>
-              <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url} />
             </div>
-            <Footer />
-          </div>
+          <Results inputresults={this.getResultsLimitForPage()}/>
+          <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
+          <Footer style={'position-nav-selector-none'}/>
+        </div>
         </div>
       )
     }
