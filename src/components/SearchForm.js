@@ -22,7 +22,6 @@ class SearchForm extends Component {
   handleSubmit (e) {
     e.preventDefault()
     this.setState({ fireRedirect: true })
-    console.log(this.state.value)
   }
   componentWillReceiveProps() {
     this.setState({ 
@@ -52,7 +51,7 @@ class SearchForm extends Component {
         </FormGroup>
         {
           fireRedirect && query &&
-          <Redirect to={`/search/${query}`} push />
+          <Redirect to={`/search/${query}/page/1`} push />
         }
       </form>
     )
