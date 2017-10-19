@@ -7,9 +7,13 @@ import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
 
+import ShowMaps from './ShowMaps'
+
+
 class Results extends Component {
     render() {
     return (<div>
+     
       <div className="container">
         <div className="row">
           <div className="well">
