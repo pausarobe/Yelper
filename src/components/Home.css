@@ -1,10 +1,7 @@
 .background-image {
   background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
-  background-size: cover; 
-} 
-
-.input-form {
-  margin-bottom: 300px;
+  background-size: cover;
+  height: 100vh;
 }
 
 h1 {

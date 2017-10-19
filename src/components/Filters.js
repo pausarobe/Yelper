@@ -3,8 +3,6 @@ import Results from './Results'
 import {getYelpData,getYelpDataStatic} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
-import { Navbar } from 'react-bootstrap'
-import ButtonReviews from './ButtonReviews'
 import Pagination from './Pagination'
 import './Filter.css'
 
@@ -119,25 +117,21 @@ class Filters extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <Header/>
-                <div className="container">
-                <div className="filters">
-         <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo
-                        locales abiertos
-          </button>
-         <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Filtrar por
-                        rating
-          </button>
-                   </div> 
-                </div>
-                <Results inputresults={this.getResultsLimitForPage()}/>
-                <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url}/>
-                <Footer/>
+      return (
+        <div className="background-image-results">
+          <Header />
+          <div className="container">
+            <div className="filters">
+              <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo locales abiertos</button>
+              <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Filtrar por rating</button>
             </div>
-        )
+          </div>
+          <Results inputresults={this.getResultsLimitForPage()} />
+          <Pagination Items={this.getNumberOfItemsForPage()} pageActive={this.props.match.params.page} url={this.props.match.url} />
+          <Footer />
+        </div>
+      )
     }
 }
 
-export default Filters;
+export default Filters

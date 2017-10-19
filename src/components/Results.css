@@ -6,11 +6,6 @@
     border-radius: 10px;
     }
 
-.background-image-results {
-  background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
-  background-size: contain; 
-} 
-
 section.list-group-item {
     height:auto;
     min-height:220px;
@@ -37,21 +32,6 @@ img {
 
 .pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
 
-/*@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 990px) {
-
-img {
-   display: none;
- }
-
-button {
-    display: none;
-}
-
-}*/
-
-
 .react-rater {
   display: inline-block;
   line-height: normal;}
@@ -73,24 +53,3 @@ button {
       left: 0;
       width: 50%;
       overflow: hidden; }
-
-
-/*.modal-header {
-    padding-bottom: 5px;
-}
-
-.modal-footer {
-        padding: 0;
-    }
-    
-.modal-footer .btn-group button {
-    height:40px;
-    border-top-left-radius : 0;
-    border-top-right-radius : 0;
-    border: none;
-    border-right: 1px solid #ddd;
-}
-    
-.modal-footer .btn-group:last-child > button {
-    border-right: 0;
-}*/
