@@ -4,6 +4,7 @@ import {getYelpData,getYelpDataStatic} from '../services/Api.js'
 import Header from './Navbar'
 import Footer from './Footer'
 import Pagination from './Pagination'
+import { Redirect } from 'react-router-dom';    
 import './Filter.css'
 
 class Filters extends Component {
@@ -118,6 +119,7 @@ class Filters extends Component {
     }
     componentDidMount() {
         this.getApiDataStatic()
+        this.getFilterRating()
         //static
     }
 
