@@ -6,11 +6,12 @@ import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
-import ShowMaps from './showMaps'
+import ShowMaps from './ShowMaps'
 
 class Results extends Component {
     render() {
     return (<div>
+     
       <div className="container">
         <div className="row">
           <div className="well">
@@ -34,7 +35,6 @@ class Results extends Component {
                         <br/>
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-globe">&nbsp;</span> <a href={res.url}>{res.name}</a></li>
                         <li>
-                          <ShowMaps/>
                         </li>
                       </ul>
                     </div>
