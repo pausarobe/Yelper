@@ -6,6 +6,10 @@
     border-radius: 10px;
     }*/
 
+.well {
+  padding: none !important;
+}
+
 section.list-group-item {
     height:auto;
     min-height:220px;
