@@ -7,7 +7,7 @@ import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
 
-import ShowMaps from './ShowMaps'
+import ShowMaps from './Map'
 
 
 class Results extends Component {
