@@ -6,7 +6,6 @@ import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
 
 import './Results.css'
-import ShowMaps from './showMaps'
 
 class Results extends Component {
     render() {
@@ -20,7 +19,7 @@ class Results extends Component {
                   <section key={res.id} className="results-a list-group-item">
                     <div className="media col-md-3">
                       <figure className="pull-left">
-                        <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} alt="image not provided" />
+                        <img id="bussines-img" className="media-object img-rounded img-responsive" onerror={this.src='../img/img_not_found.png'} src={res.image_url}  />
                       </figure>
                     </div>
                     <div className="col-md-6">
@@ -33,9 +32,6 @@ class Results extends Component {
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-phone-alt">&nbsp;</span> {res.phone.replace('+34', '')}</li>
                         <br/>
                         <li className="glyphicon"><span className="glyphicon-force-font glyphicon-globe">&nbsp;</span> <a href={res.url}>{res.name}</a></li>
-                        <li>
-                          <ShowMaps/>
-                        </li>
                       </ul>
                     </div>
                     <div className="col-md-3 text-center nolink">
