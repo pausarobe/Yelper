@@ -17,14 +17,14 @@ class Results extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="well">
+
               <div className="list-group">
                 {this.props.inputresults.map((res) => {
                   return (
                     <section key={res.id} className="results-a list-group-item">
                       <div className="media col-md-3">
                         <figure className="pull-left">
-                          <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url}  />
+                          <img id="bussines-img" className="media-object img-rounded img-responsive" src={res.image_url} />
                         </figure>
                       </div>
                       <div className="col-md-6">
@@ -48,7 +48,7 @@ class Results extends Component {
                   )
                 })}
               </div>
-            </div>
+
           </div>
         </div>
       </div>
