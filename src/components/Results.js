@@ -17,7 +17,7 @@ class Results extends Component {
       <div className="background-image-results">
         <div className="container">
           <div className="row">
-            <div className="well">
+
               <div className="list-group">
                 {this.props.inputresults.map((res) => {
                   return (
@@ -48,7 +48,7 @@ class Results extends Component {
                   )
                 })}
               </div>
-            </div>
+
           </div>
         </div>
       </div>
