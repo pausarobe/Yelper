@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'react-bootstrap'
 import ShowMaps from './Map'
+import './LinkMapModal.css'
 
 class LinkMapModal  extends Component {
 	constructor(){
@@ -26,7 +27,7 @@ class LinkMapModal  extends Component {
 		return (
 			<div>
 				<li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> 
-					<a onClick={this.open}>{this.props.address} - ({this.props.city})</a>
+					<a className="cursos-pointer" onClick={this.open}>{this.props.address} - ({this.props.city})</a>
 				</li>
 				<Modal show={this.state.showModal} onHide={this.close} bsSize={this.large}>
 		        	<Modal.Header closeButton>
