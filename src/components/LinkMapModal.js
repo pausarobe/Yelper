@@ -26,7 +26,7 @@ class LinkMapModal  extends Component {
 		return (
 			<div>
 				<li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> 
-					<a onClick={this.open}> GOOGLE MAPS{this.props.address} - ({this.props.city})</a>
+					<a onClick={this.open}>{this.props.address} - ({this.props.city})</a>
 				</li>
 				<Modal show={this.state.showModal} onHide={this.close} bsSize={this.large}>
 		        	<Modal.Header closeButton>
