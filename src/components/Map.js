@@ -20,5 +20,5 @@ export default ShowMaps;
 // 	containerElement={<div style={{ height: `400px` }} />}
 //  mapElement={<div style={{ height: `100%` }} />}
 //  lat={res.latitude}
-//  lng={res.longitude}
+//  lng={res.longitud}
 //  />

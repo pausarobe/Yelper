@@ -5,6 +5,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
+import LinkMapModal from './LinkMapModal'  
 
 import './Results.css'
 
@@ -30,7 +31,7 @@ class Results extends Component {
                       <div className="col-md-6">
                         <h2  className="list-group-item-heading center"> {res.name} </h2>
                         <ul>
-                          <li className="glyphicon"><span className="glyphicon-force-font glyphicon-map-marker">&nbsp;</span> {res.address} - ({res.city})</li>
+                          <LinkMapModal address={res.address} city={res.city} latitude={res.latitude} longitude={res.longitude}/>
                           <br/>
                           <li className="glyphicon"><span className="glyphicon-force-font glyphicon-time">&nbsp;</span> {res.is_closed === false ? 'Open' : 'Close'}</li>
                           <br/>
