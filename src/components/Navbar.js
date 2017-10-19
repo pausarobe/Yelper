@@ -8,7 +8,7 @@ import './Navbar.css'
 const Header = () => (
 
 	<div>
-		<Navbar collapseOnSelect fixedTop>
+		<Navbar collapseOnSelect fixedTop inverse >
 	 		<Navbar.Header>
 	    	<Navbar.Brand>
 	    	 	<Link to='/'><div className="Yelp">YelperBCN</div></Link>
