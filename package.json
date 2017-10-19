@@ -9,11 +9,11 @@
     "google-map-react": "^0.24.0",
     "google-maps-react": "^1.1.0",
     "react": "^16.0.0",
+    "react-asset-loader": "0.0.1",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
     "react-google-map": "^3.1.0",
     "react-google-maps": "^9.0.1",
-    "react-google-maps-loader": "^3.0.1",
     "react-rater": "^0.4.5",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
@@ -25,5 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-asset-loader": "0.0.1"
   }
 }

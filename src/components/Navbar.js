@@ -3,6 +3,7 @@ import { Navbar } from 'react-bootstrap'
 import SearchForm from './SearchForm'
 import { Link } from 'react-router-dom'
 import Filters from './Filters.js'
+import './Navbar.css'
 
 const Header = () => (
 
@@ -10,8 +11,7 @@ const Header = () => (
 		<Navbar collapseOnSelect fixedTop>
 	 		<Navbar.Header>
 	    	<Navbar.Brand>
-
-	    	 	<Link to='/'>Yelper</Link>
+	    	 	<Link to='/'><div className="Yelp">YelperBCN</div></Link>
 	      </Navbar.Brand>
 	    	<Navbar.Toggle />
 	    </Navbar.Header>
