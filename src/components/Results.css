@@ -1,10 +1,15 @@
-.body {
+/*.body {
     border: 1px solid #aaa;
     _width: 100%;
     margin: 30px;
     padding: 20px;
     border-radius: 10px;
-    }
+    }*/
+
+.background-image-results {
+  background-image: url("../img/bigstock-Coffee-Shop-Blur-Background-Wi-74331850.jpg");
+  background-size: contain; 
+} 
 
 section.list-group-item {
     height:auto;
