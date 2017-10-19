@@ -48,7 +48,7 @@ Los resultados se van a presentar en una lista con información detallada de la 
 
         <div id="contact" className="collapse divFooterContact">
 
-<p>YelperBCN ha sido diseñado por cuatro estudiantes de SkylabCoders</p>
+<p> <br/> <br/> <br/>YelperBCN ha sido diseñado por cuatro estudiantes de SkylabCoders</p>
 
  <a href="mailto:bootsnipp@gmail.com"> <strong>Pau Sarobe</strong> </a> <br/>
 <a href="mailto:bootsnipp@gmail.com"> <strong>Abel Canet</strong></a><br/>
