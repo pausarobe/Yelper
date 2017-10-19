@@ -129,8 +129,8 @@ class Filters extends Component {
         <div>
           <Header />
           <div className="background-image-results">
-            <div className="container text-center">
-              <div className="filters">
+            <div className="container">
+              <div className="filters text-center">
                 <button type="button" onClick={this.getFilter} className="btn btn-default btn-md"> Mostrar solo locales abiertos</button><span>&nbsp;</span>
                 <button type="button" onClick={this.getFilterRating} className="btn btn-default btn-md">Top rated <li className="glyphicon"><span className="glyphicon-force-font glyphicon-sort"></span></li></button>
               </div>
