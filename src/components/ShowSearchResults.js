@@ -17,9 +17,7 @@ class  ShowSearchResults extends Component {
 		        city: '',
 		        url: '', 
 		        address: '',
-		        phone: '' ,
-		        coor_latitude: '',
-		        coor_longitude: ''
+		        phone: '' 
       		}]
     	}
 	}
@@ -40,9 +38,7 @@ class  ShowSearchResults extends Component {
 	                  city: yelpData.location.city,
 	                  url: yelpData.url,
 	                  address: yelpData.location.address1,
-	                  phone: yelpData.display_phone,
-	                  coor_latitude: yelpData.coordinates.latitude,
-	                  coor_longitude: yelpData.coordinates.longitude
+	                  phone: yelpData.display_phone
 	              })
 	          })
 	        })
