@@ -45,7 +45,7 @@ class ButtonReviews extends Component {
                 .map(function(review){
                     return ({rating: review.rating,
                                 text: review.text,
-                                time_created: review.time_created,
+                                time_created: new Date(review.time_created).toString().split('').splice(0, 16),
                                 url: review.url,
                                 image_url: true && review.user.image_url || image_default,
                                 name: review.user.name
@@ -61,7 +61,7 @@ class ButtonReviews extends Component {
               .map(function(review){
                 return ({rating: review.rating,
                           text: review.text,
-                          time_created: review.time_created,
+                          time_created: new Date(review.time_created).toString(),
                           url: review.url,
                           image_url: true && review.user.image_url || image_default,
                           name: review.user.name
@@ -73,8 +73,7 @@ class ButtonReviews extends Component {
     
       
     componentDidMount(){
-        //this.getApiData()
-      this.getApiDataStatic()
+      this.getApiData()
     } 
 
   render () {
@@ -121,8 +120,8 @@ class ButtonReviews extends Component {
                         <Col md={8}>
                           <p>{showReview.text}</p>
                         </Col>
-                        <Col md={12}>
-                          <p>{showReview.time_created}</p>
+                        <Col md={4}>
+                          <p className="date-format">{showReview.time_created}</p>
                         </Col>
                       </div>
                     </Row>

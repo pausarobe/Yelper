@@ -1,19 +1,18 @@
 import { Nav, NavItem, Navbar } from 'react-bootstrap'
 import './Footer.css'
 import React, {Component} from 'react'
-import "bootstrap"
+import 'bootstrap'
 
 class Footer extends Component {
-
-  constructor() {
-        super()
-        this.state = {
-            YelperBCN: '',
-            About: '',
-            Contact: '',
-            ThanksTo: ''
-        }
+  constructor () {
+    super()
+    this.state = {
+      YelperBCN: '',
+      About: '',
+      Contact: '',
+      ThanksTo: ''
     }
+  }
 
     render() {
     console.log("STYLEEE", this.props.style)
