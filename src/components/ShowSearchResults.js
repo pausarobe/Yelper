@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Results from './Results'
 import {getYelpData } from '../services/Api.js'
 import Header from './Navbar'
-import './Show.css'
+import '../css/Show.css'
 
 class  ShowSearchResults extends Component {
 	constructor(){

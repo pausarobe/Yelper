@@ -7,7 +7,7 @@ import 'react-rater/lib/react-rater.css'
 import ButtonReviews from './ButtonReviews'
 import LinkMapModal from './LinkMapModal'  
 
-import './Results.css'
+import '../css/Results.css'
 
 import ShowMaps from './Map'
 

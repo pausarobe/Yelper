@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap'
 import SearchForm from './SearchForm'
 import { Link } from 'react-router-dom'
 import Filters from './Filters.js'
-import './Navbar.css'
+import '../css/Navbar.css'
 
 const Header = () => (
 

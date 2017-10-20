@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'react-bootstrap'
 import ShowMaps from './Map'
-import './LinkMapModal.css'
+import '../css/LinkMapModal.css'
 
 class LinkMapModal  extends Component {
 	constructor(){

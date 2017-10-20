@@ -5,7 +5,7 @@ import 'react-rater/lib/react-rater.css'
 import {getYelpDataById, getYelpDataStaticById } from '../services/Api.js'
 import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'react-bootstrap'
 
-import './ButtonReviews.css'
+import '../css/ButtonReviews.css'
 
 class ButtonReviews extends Component { 
   constructor() {
@@ -73,7 +73,7 @@ class ButtonReviews extends Component {
     
       
     componentDidMount(){
-      this.getApiDataStatic()
+      this.getApiData()
     } 
 
   render () {

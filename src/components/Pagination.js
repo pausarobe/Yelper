@@ -1,5 +1,5 @@
 import React from 'react'
-import './Pagination.css'
+import '../css/Pagination.css'
 
 const Pagination = (props) =>{
 	console.log("Paginato",props)

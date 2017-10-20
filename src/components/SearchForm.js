@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { FormGroup, FormControl, InputGroup, Button } from 'react-bootstrap'
 
-import './InputForm.css'
+import '../css/InputForm.css'
 
 class SearchForm extends Component {
   constructor () {
@@ -33,7 +33,7 @@ class SearchForm extends Component {
   render () {
     const { fireRedirect, value: query } = this.state
     return (
-      <form className="SearchForm " onSubmit={ this.handleSubmit }>
+      <form className="SearchForm" onSubmit={ this.handleSubmit }>
         <FormGroup>
           <InputGroup bsSize='lg'>
             <FormControl
