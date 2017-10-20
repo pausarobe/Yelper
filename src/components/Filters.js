@@ -56,6 +56,18 @@ class Filters extends Component {
         this.setState({
           results: [...dataSearchYelp.filter(Boolean)]
           .map(function (yelpData) {
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e0/g,"à"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e1/g,"á"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e8/g,"è"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e9/g,"é"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00ec/g,"ì"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00ed/g,"í"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f2/g,"ò"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f3/g,"ó"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f9/g,"ù"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00fa/g,"ú"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f1/g,"ñ"))
+            yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00a2/g,"ç"))
             return ({
               id: yelpData.id,
               name: yelpData.name,
@@ -78,6 +90,18 @@ class Filters extends Component {
     this.setState({
       results: [...getYelpDataStatic()]
       .map(function (yelpData) {
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e0/g,"à"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e1/g,"á"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e8/g,"è"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00e9/g,"é"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00ec/g,"ì"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00ed/g,"í"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f2/g,"ò"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f3/g,"ó"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f9/g,"ù"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00fa/g,"ú"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00f1/g,"ñ"))
+        yelpData = JSON.parse(JSON.stringify(yelpData).replace(/00a2/g,"ç"))
         return ({
           id: yelpData.id,
           name: yelpData.name,
