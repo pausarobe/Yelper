@@ -73,7 +73,7 @@ class ButtonReviews extends Component {
     })
   }
   componentDidMount () {
-    this.getApiDataStatic()
+    this.getApiData()
   }
   render () {
     const popover = (

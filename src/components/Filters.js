@@ -131,7 +131,7 @@ class Filters extends Component {
     this.getApiData()
   }
   componentDidMount () {
-    this.getApiDataStatic()
+    this.getApiData()
     this.getFilterRating()
   }
   render () {
