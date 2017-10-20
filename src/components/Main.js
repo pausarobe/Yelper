@@ -5,9 +5,9 @@ import Home from './Home'
 import Filters from './Filters'
 
 const Main = (props) => {
-	return (
-  	<div>
-  		<Switch>
+  return (
+    <div>
+      <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/search/:query/page/:page' component={Filters} />
       </Switch>

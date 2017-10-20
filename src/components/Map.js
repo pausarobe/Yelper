@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
@@ -11,14 +11,6 @@ const ShowMaps = withGoogleMap(props =>
       position={{ lat: props.lat, lng: props.lng }}
     />
   </GoogleMap>
-);
+)
 
-
-export default ShowMaps;
-
-// <ShowMaps
-// 	containerElement={<div style={{ height: `400px` }} />}
-//  mapElement={<div style={{ height: `100%` }} />}
-//  lat={res.latitude}
-//  lng={res.longitud}
-//  />
+export default ShowMaps

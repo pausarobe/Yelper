@@ -30,11 +30,11 @@ h3 {
   animation: typewriter 4s steps(500) 2s infinite normal both,
              blinkTextPoint 500ms steps(500)  infinite normal;
 }
-@keyframes typewriter{
+@keyframes typewriter {
   from{width: 0;}
   to{width: 500px;}
 }
-@keyframes blinkTextCursor{
+@keyframes blinkTextCursor {
   from{border-right-color: transparent;}
   to{border-right-color: transparent;}
 }

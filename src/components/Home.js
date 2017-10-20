@@ -5,6 +5,7 @@ import SearchForm from './SearchForm'
 import Footer from './Footer'
 
 import '../css/Home.css'
+
 const Home = () => (
   <div className="background-image">
     <Grid>
@@ -14,7 +15,7 @@ const Home = () => (
             <h1>Yelper</h1>
             <h4 className="subtitle">BARCELONA</h4>
           </div>
-          <SearchForm />
+          <SearchForm style={'SearchForm-home'} />
         </Col>
       </Row>
     </Grid>

@@ -1,5 +1,7 @@
 import axios from 'axios'
+
 const token ='Bearer RmHQV-aiyyC-8L0UnKViDsgcCxXiTpIFvV2tfqO5TM4l6poX81umJNu8pctONiOpdMD1JAC27_LD0NeNNfS1_q_nXe9es8bAYol8MXOL_Up4OAMDc8vfmCo6rXPkWXYx'
+
 const statisId={
     "reviews": [
         {
@@ -954,13 +956,12 @@ export function getYelpDataById (id){
     })
     .then(response => response.data.reviews)
 }
+
 export function getYelpDataStatic(){
   return staticbusinesses.businesses
-} 
+}
+
 export function getYelpDataStaticById(){
   return statisId.reviews
 } 
-
-//const googleMaps = 'AIzaSyAlxR6HdRdBNeXImyEAn3VkSWZFiOooESk'
-
     

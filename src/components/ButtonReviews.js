@@ -1,81 +1,77 @@
 import React, { Component } from 'react'
+import { getYelpDataById, getYelpDataStaticById } from '../services/Api.js'
+import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'react-bootstrap'
 
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
-import {getYelpDataById, getYelpDataStaticById } from '../services/Api.js'
-import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'react-bootstrap'
 
 import '../css/ButtonReviews.css'
 
-class ButtonReviews extends Component { 
-  constructor() {
-        super()
-        this.state = {
-          showModal:false,
-          result: [{
-            text: '',
-              time_created: '',
-              url: '',
-              image_url: '',
-              name: ''
-          }]
-          
-        }
-        this.open=this.open.bind(this)
-        this.close=this.close.bind(this)
-        this.getInitialState=this.getInitialState.bind(this)
-      this.getApiDataStatic=this.getApiDataStatic.bind(this)
-  }
-  getInitialState() {
-    return { showModal: false };
-  }
-  close() {
-    this.setState({ showModal: false });
-  }
-  open() {
-    this.setState({ showModal: true });
-    //this.getApiDataStatic()
-  }
-    getApiData(){
-        const image_default = 'http://www.naervaerk.dk/images/default-avatar.jpg'
-        getYelpDataById(this.props.id).then(
-            reviewsData => {
-            this.setState ({
-              result:[...reviewsData]
-                .map(function(review){
-                    return ({rating: review.rating,
-                                text: review.text,
-                                time_created: new Date(review.time_created).toString().split('').splice(0, 16),
-                                url: review.url,
-                                image_url: true && review.user.image_url || image_default,
-                                name: review.user.name
-                            })
-                })       
-            })
-            })
+class ButtonReviews extends Component {
+  constructor () {
+    super()
+    this.state = {
+      showModal: false,
+      result: [{
+        text: '',
+        time_created: '',
+        url: '',
+        image_url: '',
+        name: ''
+      }]
     }
-  getApiDataStatic(){
-      const image_default = 'http://www.naervaerk.dk/images/default-avatar.jpg'
-      this.setState ({
-            result:[...getYelpDataStaticById()]
-              .map(function(review){
-                return ({rating: review.rating,
-                          text: review.text,
-                          time_created: new Date(review.time_created).toString().split('').splice(0, 16),
-                          url: review.url,
-                          image_url: true && review.user.image_url || image_default,
-                          name: review.user.name
-                      })
-              })       
+    this.open = this.open.bind(this)
+    this.close = this.close.bind(this)
+    this.getInitialState = this.getInitialState.bind(this)
+    this.getApiDataStatic = this.getApiDataStatic.bind(this)
+  }
+  getInitialState () {
+    return { showModal: false }
+  }
+  close () {
+    this.setState({ showModal: false })
+  }
+  open () {
+    this.setState({ showModal: true })
+  }
+  getApiData () {
+    const image_default = 'http://www.naervaerk.dk/images/default-avatar.jpg'
+    getYelpDataById(this.props.id).then(
+      reviewsData => {
+        this.setState ({
+          result: [...reviewsData]
+          .map(function (review) {
+            return ({
+              rating: review.rating,
+              text: review.text,
+              time_created: new Date(review.time_created).toString().split('').splice(0, 16),
+              url: review.url,
+              image_url: true && review.user.image_url || image_default,
+              name: review.user.name
+            })
           })
-      }
-      
-    
-      
-    componentDidMount(){
-      this.getApiData()
-    } 
-
+        })
+      })
+  }
+  getApiDataStatic () {
+    const image_default = 'http://www.naervaerk.dk/images/default-avatar.jpg'
+    this.setState ({
+      result: [...getYelpDataStaticById()]
+      .map(function (review) {
+        return ({
+          rating: review.rating,
+          text: review.text,
+          time_created: new Date(review.time_created).toString().split('').splice(0, 16),
+          url: review.url,
+          image_url: true && review.user.image_url || image_default,
+          name: review.user.name
+        })
+      })
+    })
+  }
+  componentDidMount () {
+    this.getApiData()
+  }
   render () {
     const popover = (
       <Popover id="modal-popover" title="popover">

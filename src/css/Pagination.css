@@ -1,8 +1,8 @@
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
-    background-color: rgba(0,0,0,0.3);
-    border-color: rgba(0,0,0,0.3);
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active >s pan:hover {
+  background-color: rgba(0,0,0,0.3);
+  border-color: rgba(0,0,0,0.3);
 } 
 
-.pagination>li>a, .pagination>li>span {
+.pagination > li > a, .pagination > li > span {
 	color: black !important;
 }

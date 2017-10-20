@@ -7,26 +7,35 @@
   margin: 0;
   width: 100%;
 }
-.position-nav-selector-absolute{
+
+.position-nav-selector-absolute {
   position: absolute;
 }
-.position-nav-selector-none{
+
+.position-nav-selector-none {
   position: none;
 }
+
 .nav-selector .navbar-brand {
   cursor: pointer;
   color: white;
 }
 
-.nav-selector .navbar-nav li a{
+.nav-selector .navbar-nav li a {
   color: white;
 }
-.divCollapse{
+.divCollapse {
 	color:white;
-
 }
 
-
-.contacts{
+.contacts {
 	color: 
+}
+
+.github_img {
+  height: 30px;
+}
+
+.github_img:hover {
+  opacity: 0.3;
 }
