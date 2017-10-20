@@ -3,8 +3,8 @@ import { getYelpDataById, getYelpDataStaticById } from '../services/Api.js'
 import { Row, Col, Jumbotron, Button, Popover, Tooltip, Modal, Image } from 'react-bootstrap'
 
 import Rater from 'react-rater'
-import 'react-rater/lib/react-rater.css'
 
+import 'react-rater/lib/react-rater.css'
 import '../css/ButtonReviews.css'
 
 class ButtonReviews extends Component {
@@ -12,6 +12,7 @@ class ButtonReviews extends Component {
     super()
     this.state = {
       showModal: false,
+      showButton: 'disabled',
       result: [{
         text: '',
         time_created: '',
@@ -38,7 +39,11 @@ class ButtonReviews extends Component {
     const image_default = 'http://www.naervaerk.dk/images/default-avatar.jpg'
     getYelpDataById(this.props.id).then(
       reviewsData => {
-        this.setState ({
+        if (!reviewsData) {
+          return ''
+        }
+        this.setState({
+          
           result: [...reviewsData]
           .map(function (review) {
             return ({
@@ -85,7 +90,7 @@ class ButtonReviews extends Component {
     )
     return (
       <div clasName="container">
-        <Button bsStyle="default" bsSize="large" onClick={this.open}>show user reviews</Button>
+        <Button bsStyle="default" bsSize="large" className={this.state.result.showButton} onClick={this.open}>show user reviews</Button>
         <Modal show={this.state.showModal} onHide={this.close} bsSize={this.large}>
           <Modal.Header closeButton>
             <Modal.Title>YelperBCN</Modal.Title>

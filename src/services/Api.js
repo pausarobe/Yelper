@@ -43,7 +43,7 @@ const statisId={
         "nb",
         "es"
     ]}
-const staticbusinesses={
+let staticbusinesses={
     "businesses": [
         {
             "id": "avana-sushi-boston",
@@ -73,7 +73,7 @@ const staticbusinesses={
             ],
             "price": "$",
             "location": {
-                "address1": "42 Beach St",
+                "address1": "42 Beach val00e8ncia",
                 "address2": "",
                 "address3": "",
                 "city": "Boston",
@@ -964,4 +964,5 @@ export function getYelpDataStatic(){
 export function getYelpDataStaticById(){
   return statisId.reviews
 } 
+
     
