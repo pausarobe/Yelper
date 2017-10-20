@@ -17,7 +17,6 @@ class Filters extends Component {
         }
         this.getFilter = this.getFilter.bind(this)
         this.getFilterRating = this.getFilterRating.bind(this)
-
     }
 
     getFilter() {
@@ -63,6 +62,18 @@ class Filters extends Component {
                 this.setState({
                     results: [...dataSearchYelp]
                         .map(function (yelpData) {
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e0/g,"à"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e1/g,"á"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e8/g,"è"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e9/g,"é"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00ec/g,"ì"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00ed/g,"í"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f2/g,"ò"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f3/g,"ó"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f9/g,"ù"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00fa/g,"ú"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f1/g,"ñ"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00a2/g,"ç"))
                             return (   {
                                 id: yelpData.id,
                                 name: yelpData.name,
@@ -82,10 +93,26 @@ class Filters extends Component {
             })
 
     }
+    cleanAccents(value){
+            return JSON.stringify(value).replace(/00e8/g,"è")
+    }
     getApiDataStatic() {
          this.setState({
                     results: [...getYelpDataStatic()]
                         .map(function (yelpData) {
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e0/g,"à"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e1/g,"á"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e8/g,"è"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00e9/g,"é"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00ec/g,"ì"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00ed/g,"í"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f2/g,"ò"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f3/g,"ó"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f9/g,"ù"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00fa/g,"ú"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00f1/g,"ñ"))
+                            yelpData=JSON.parse(JSON.stringify(yelpData).replace(/00a2/g,"ç"))
+                           
                             return (   {
                                 id: yelpData.id,
                                 name: yelpData.name,
@@ -103,6 +130,7 @@ class Filters extends Component {
                 })
             
     }
+    
     getNumberOfItemsForPage(){
         return Math.floor(this.state.results.length / this.state.numberItemsForPage )
 
@@ -115,11 +143,11 @@ class Filters extends Component {
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps
-        this.getApiData()
+        this.getApiDataStatic()
 
     }
     componentDidMount() {
-        this.getApiData()
+        this.getApiDataStatic()
         this.getFilterRating()
         //static
     }
