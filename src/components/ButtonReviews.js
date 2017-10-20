@@ -12,7 +12,6 @@ class ButtonReviews extends Component {
     super()
     this.state = {
       showModal: false,
-      showButton: 'disabled',
       result: [{
         text: '',
         time_created: '',
@@ -43,7 +42,6 @@ class ButtonReviews extends Component {
           return ''
         }
         this.setState({
-          
           result: [...reviewsData]
           .map(function (review) {
             return ({
@@ -75,7 +73,7 @@ class ButtonReviews extends Component {
     })
   }
   componentDidMount () {
-    this.getApiData()
+    this.getApiDataStatic()
   }
   render () {
     const popover = (
@@ -90,7 +88,7 @@ class ButtonReviews extends Component {
     )
     return (
       <div clasName="container">
-        <Button bsStyle="default" bsSize="large" className={this.state.result.showButton} onClick={this.open}>show user reviews</Button>
+        <Button bsStyle="default" bsSize="large" onClick={this.open}>show user reviews</Button>
         <Modal show={this.state.showModal} onHide={this.close} bsSize={this.large}>
           <Modal.Header closeButton>
             <Modal.Title>YelperBCN</Modal.Title>
