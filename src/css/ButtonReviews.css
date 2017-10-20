@@ -18,3 +18,16 @@
     text-align: right;
   }
 }
+
+.zoom:hover {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);   
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(2.5);
+}

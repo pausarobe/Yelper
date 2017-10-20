@@ -98,11 +98,11 @@ class ButtonReviews extends Component {
             {this.state.result.map(function (showReview) {
               return (
                 <Jumbotron>
-                  <div className="container">
+                  <div className="container-fluid">
                     <Row>
                       <Col md={4}>
                         <figure className="user-image">
-                          <Image src={showReview.image_url} thumbnail rounded />
+                          <Image className="zoom" src={showReview.image_url} thumbnail rounded />
                           <figcaption><p>{showReview.name}</p></figcaption>
                         </figure>
                       </Col>
